@@ -1,0 +1,218 @@
+p {
+    width: 100%;
+    font-size: 1.0em;
+    line-height: 1.5;
+    padding-bottom: 20px;
+}
+
+h2 {
+    font-family: 'Chosunilbo_myungjo', sans-serif, serif;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+h4 {
+    color: #002B5B;
+    margin: 15px 0px;
+    font-size: 1.1em;
+}
+
+td {
+    padding: 3px 0px;
+}
+
+    .title {
+        color: #002B5B;
+        width: 100px;
+    }
+
+.labeling{
+    line-height: 1.8;
+}
+
+main {
+    background-color: #F3F3F3;
+    width: 100%;
+    height: auto;
+}
+
+    #description-title {
+        width: 1000px;
+        margin: 0 auto; 
+        text-align: center;
+        padding-top: 100px;
+    }
+
+        #description-title > h1 {
+            display: inline-block;
+            font-family: 'Chosunilbo_myungjo', sans-serif, serif;
+            font-size: 2.5em;
+            padding-bottom: 25px;
+        }
+
+        #colorBox {
+            height: 8px;
+            width: inherit;
+            margin: 10px auto;
+            background: linear-gradient(90deg, #002B5B, #002B5B 8%, #EA5455 8%, #EA5455 18%, #e4dccf 18%, #e4dccf 32%, #F9F5EB 32%, #F9F5EB 68%, #e4dccf 68%, #e4dccf 82%, #EA5455 82%, #EA5455 92%, #002B5B 92%, #002B5B 100%);
+        }
+
+    /* 간단 소개 */
+    #short-description {
+        text-align: center;
+        width: 1100px;
+        height: 310px;
+        margin-top: 60px; 
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #F6F7F8;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        #red-line {
+            width: 80px;
+            height: 1px;
+            background-color: #EA5455;
+            margin: 35px;
+        }
+
+    /* 소개 이미지 슬라이드  */
+    #image {
+        width: 1100px;
+        height: 400px;
+        margin: 50px auto;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .swiper {
+            padding-bottom: 60px !important;
+            height: 250px;
+
+            .swiper-wrapper {
+                align-items: center;
+            }
+
+            .swiper-slide {
+                border-radius: 5px;
+                height: 200px !important;
+                transition: 0.2s;
+
+                &.active {
+                    height: 280px !important;
+                }
+            }
+
+                .swiper-slide > img {
+                    width: inherit;
+                    height: inherit;
+                    object-fit:cover;                            
+                }
+
+            .prev,.next {
+                cursor: pointer;
+                z-index: 100;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                opacity: 0.65;
+                transition: 0.2s;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+            .prev {
+                left: 25px;
+            }
+
+                .prev svg {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                .prev path {
+                    fill: #fff;
+                }
+
+            .next {
+                right: 25px;
+            }
+
+                .next svg {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                .next path {
+                    fill: #fff;
+                }
+
+            .pagination {
+                margin-left: 8px !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 40px;
+                z-index: 100;  
+            }
+        }
+
+        span.swiper-pagination-bullet-active {
+            background-color: #002B5B;
+        }
+
+    /* 세부 소개 */
+    #event-description {
+        width: 1100px;
+        text-align: left;
+        margin: 0px auto;
+        padding-bottom: 40px;
+    }
+
+        /* (종묘) 행사 소개 작은 설명 */
+        .jm-sub {
+            color: #a0a0a0;
+        }
+
+        .description > div:not(#way-to-come) {
+            padding-bottom: 20px;
+            padding-left: 150px;
+            padding-right: 80px;
+        }
+
+            .numbering {
+                font-size: 0.5em;
+                position: relative;
+                top: -1.2px;
+            }
+
+        /* 오시는 길 */
+        #way-to-come {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+            /* 지도 */
+            #map {
+                width: 450px;
+                height: 300px;
+                background-color: #bbb;
+                display: inline-block;
+            }
+
+            #how {
+                display: inline-block;
+                padding: 40px;
+            }
+            

@@ -1,0 +1,73 @@
+main {
+    background-color: #F3F3F3;
+    width: 100%;
+    height: 761px;
+}
+
+    #find-id-title {
+        width: 1000px;
+        margin: 0 auto; 
+        text-align: center;
+        padding-top: 100px;
+    }
+
+        #find-id-title > h1 {
+            display: inline-block;
+            font-family: 'Chosunilbo_myungjo', sans-serif, serif;
+            font-size: 2.5em;
+            padding-bottom: 25px;
+        }
+
+        #colorBox {
+            height: 8px;
+            width: inherit;
+            margin: 10px auto;
+            background: linear-gradient(90deg, #002B5B, #002B5B 8%, #EA5455 8%, #EA5455 18%, #e4dccf 18%, #e4dccf 32%, #F9F5EB 32%, #F9F5EB 68%, #e4dccf 68%, #e4dccf 82%, #EA5455 82%, #EA5455 92%, #002B5B 92%, #002B5B 100%);
+        }
+
+    #find-id {
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+        #find-id > div {
+            width: 150px;
+            height: 150px;
+            background-color: rgba(0, 43, 91, 50%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px;
+        }
+
+        #find-id img {
+            width: 100px;
+            margin-bottom: 5px;
+        }
+
+        form input {
+            width: 255px;
+            height: 45px;
+            margin: 5px;
+            padding: 0 20px;
+            border: 2px solid #bbb;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+        
+        #find-id-btn  {
+            background-color: #002B5B;
+            color: #F9F5EB;
+            width: 300px;
+            height: 45px;
+            margin-top: 15px;
+            padding: 0 20px;
+            border: 2px solid #002B5B;
+            border-radius: 8px;
+            font-size: 0.9em;
+            cursor:pointer;
+        }

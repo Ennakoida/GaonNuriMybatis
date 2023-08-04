@@ -1,0 +1,205 @@
+main {
+    background-color: #F3F3F3;
+    width: 100%;
+    height: 761px;
+}
+
+    main>section:first-child {
+        width: 720px;
+        height: 100%;
+        margin: 0 auto; 
+    }
+
+    #login-title {
+        /* width: auto; */
+        text-align: left;
+        padding-top: 190px;
+    }
+
+        #login-title > h1 {
+            display: inline-block;
+            font-family: 'Chosunilbo_myungjo', sans-serif, serif;
+            font-size: 2.5em;
+            padding-left: 8px;
+        }
+
+        #login-title > p {
+            display: inline-block;
+            width: auto;
+            color: #666666;
+            padding-left: 5px;
+            font-size: 0.95em;
+        }
+
+        #colorBox {
+            height: 8px;
+            width: inherit;
+            margin: 10px auto;
+            background: linear-gradient(90deg, #002B5B, #002B5B 15%, #EA5455 15%, #EA5455 38%, #e4dccf 38%, #e4dccf 68%, #F9F5EB 68%, #F9F5EB 100%);
+        }
+
+    #login {
+        width: auto;
+        text-align: center;
+        margin-top: 70px;
+        display: flex;
+        justify-content: center;
+    }
+
+        #login-input {
+            display: inline-block;
+        }
+
+            /* 아이디, 비밀번호 */
+            form input:not(input[type=checkbox]) {
+                width: 255px;
+                height: 45px;
+                margin: 5px;
+                padding: 0 20px;
+                border: 2px solid #bbb;
+                border-radius: 8px;
+                font-size: 0.9em;
+            }
+            
+            /* 로그인 버튼 */
+            #login-btn  {
+                background-color: #002B5B;
+                color: #F9F5EB;
+                width: 300px;
+                height: 45px;
+                margin-top: 20px;
+                margin-bottom: 0px;
+                padding: 0 20px;
+                border: 2px solid #002B5B;
+                border-radius: 8px;
+                font-size: 0.9em;
+                cursor:pointer;
+            }
+
+            /* 로그인 상태 유지, 아이디 비밀번호 찾기 */
+            #login-input div {
+                color: #666666;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                width: 300px;
+            }
+
+                /* 로그인 상태 유지 */
+                #login-input div > label {
+                    font-size: 0.85em;
+                    padding-left: 3px;
+                }
+
+                #stay-signed-in {
+                    display: inline-block;
+                    margin: 0;
+                    /* 체크박스 색상 변경 */
+                    accent-color: #002B5B;
+                    position: relative;         
+                    top: 1.5px;
+                }
+                
+                /* 아이디 비밀번호 찾기 */
+                #login-input div > p {
+                    display: inline-block;
+                    width: auto;
+                    margin: 0;
+                    padding-right: 5px;
+                    font-size: 0.8em;
+                    position: relative;
+                    top: 2px;
+                }
+
+                #login-input div a {
+                    color: #666666;
+                }
+
+                #login-input div a:hover {
+                    color: #EA5455;
+                }
+            
+            #sns-login {
+                display: inline-block;
+                margin-left: 60px;
+            }
+
+                #sns-login button {
+                    width: 300px;
+                    height: 45px;
+                    border-radius: 12px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 0.9em;
+                }
+
+                /* 네이버 */
+                /* https://developers.naver.com/docs/login/bi/bi.md#%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EB%B2%84%ED%8A%BC-%EC%82%AC%EC%9A%A9-%EA%B0%80%EC%9D%B4%EB%93%9C */
+                #naver {
+                    background-color: #03c75a;
+                    color: white;
+                    border-style: none;
+                    margin: 15px;
+                    margin-top: 5px;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                    #naver > div {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                        #naver div {
+                            width: 280px;
+                            margin-right: 10px;
+                        }
+
+                /* 카카오 */
+                /* https://developers.kakao.com/docs/latest/ko/kakaosync/design-guide */
+                /* https://developers.kakao.com/docs/latest/ko/kakaologin/design-guide#kakaologin-button-guide */
+                #kakao {
+                    background-color: #FEE500;
+                    border-style: none;
+                    margin: 15px;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                    #kakao > div {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                        #kakao div {
+                            width: 280px;
+                            margin-right: 8px;
+                            color: rgba(0, 0, 0, 85%);
+                            font-weight: bold;
+                        }
+
+
+                /* 구글 */
+                /* https://developers.google.com/identity/branding-guidelines?hl=ko#matching */
+                #google {
+                    background-color: white;
+                    border: 2px solid #ccc;
+                    margin: 15px;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                    #google > div {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                        #google div {
+                            width: 272px;
+                            /* 구글 로그인 표준 폰트 : Roboto */
+                            font-family: 'Roboto', sans-serif;
+                            color: rgba(0, 0, 0, 54%);
+                            font-weight: bold;
+                        }

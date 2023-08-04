@@ -1,0 +1,208 @@
+p {
+    width: 100%;
+    line-height: 1.5;
+    padding-bottom: 15px;
+}
+
+h2 {
+    font-family: 'Chosunilbo_myungjo', sans-serif, serif;
+}
+
+h3 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+h4 {
+    padding: 10px 0;
+}
+
+span {
+    color: #EA5455;
+}
+
+main {
+    background-color: #F3F3F3;
+    width: 100%;
+    height: auto;
+}
+
+    #rentals-title {
+        width: 1000px;
+        margin: 0 auto; 
+        text-align: center;
+        padding-top: 100px;
+    }
+
+        #rentals-title > h1 {
+            display: inline-block;
+            font-family: 'Chosunilbo_myungjo', sans-serif, serif;
+            font-size: 2.5em;
+            padding-bottom: 25px;
+        }
+
+        #colorBox {
+            height: 8px;
+            width: inherit;
+            margin: 10px auto;
+            background: linear-gradient(90deg, #002B5B, #002B5B 8%, #EA5455 8%, #EA5455 18%, #e4dccf 18%, #e4dccf 32%, #F9F5EB 32%, #F9F5EB 68%, #e4dccf 68%, #e4dccf 82%, #EA5455 82%, #EA5455 92%, #002B5B 92%, #002B5B 100%);
+        }
+
+    #short-description {
+        text-align: center;
+        width: 1100px;
+        height: 230px;
+        margin-top: 60px; 
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #F6F7F8;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        #red-line {
+            width: 80px;
+            height: 1px;
+            background-color: #EA5455;
+            margin: 35px;
+        }
+
+    #shopping {
+        width: 1100px;
+        margin-top: 50px; 
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 70px;
+    }
+
+        /* 지점 선택, 대여 일자 */
+        #select-input {
+            width: 912px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+            form > div {
+                display: inline-block;
+                text-align: left;
+            }
+
+                label {
+                    display: inline-block;
+                    width: 180px;
+                    text-align: left;
+                    font-weight: bold;
+                    margin-top: 15px;
+                    margin-bottom: 8px;
+                    margin-left: 8px;
+                }
+                
+                select {
+                    /* select 화살표 디자인  */
+                    -webkit-appearance:none; /* for chrome */
+                    -moz-appearance:none; /*for firefox*/
+                    appearance:none;
+                    background-position: calc(100% - 19px) center !important;
+                    background: url("img/select-icon.png") no-repeat 97% 50%/15px auto;
+                    padding: 8px 32px 8px 16px;
+
+                    /* select 창 디자인  */
+                    width: 225px;
+                    height: 50px;
+                    margin: 5px;
+                    margin-bottom: 20px;
+                    padding: 0 20px;
+                    background-color: #fff;
+                    border: 2px solid #bbb;
+                    border-radius: 8px;
+                    font-size: 0.9em;
+                    color: #a9a9a9;
+                }
+
+                    select option, select optgroup {
+                        color: #000;
+                    }
+
+                input[type=datetime-local] {
+                    width: 180px;
+                    height: 45px;
+                    margin: 5px;
+                    padding: 0 20px;
+                    border: 2px solid #bbb;
+                    border-radius: 8px;
+                    font-size: 0.9em;
+                    color: #a9a9a9;
+                }
+
+                    /* 달력 아이콘 클릭 영역 넓게 */
+                    #select-date::-webkit-calendar-picker-indicator {
+                        width: 20px; 
+                        height: 20px;
+                        padding-left: 165px;
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                        position: absolute;
+                        z-index: 1;
+                    }
+
+            /* 대여 목록 나열 */
+            .hanbok {
+                display: inline-block;
+                padding: 15px;
+                padding-bottom: 50px;;
+            }
+
+                /* 한복 이미지 */
+                .hanbok-img {
+                    width: 200px;
+                    height: 280px;
+                }
+
+                .hanbok > h3, .hanbok > p:first-of-type {
+                    text-align: left;
+                }
+
+                .hanbok > p:first-of-type {
+                    color: #a0a0a0;
+                    font-size: 0.93em;
+                }
+
+                .hanbok > p:last-of-type {
+                    text-align: right;
+                    font-size: 1.0em;
+                    font-weight: bold;
+                }
+
+                .hanbok > div {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                    /* 찜하기 하트 */
+                    .hanbok > div > img {
+                        width: 33px;
+                        height: 33px;
+                        cursor:pointer;
+                    }
+
+                    /* 대여하기 */
+                    .hanbok button {
+                        width: 160px;
+                        height: 35px;
+                        border: 2px solid #EA5455;
+                        border-radius: 100px;
+                        color: #EA5455;
+                        font-weight: bold;
+                    }
+
+                    .hanbok button:hover {
+                        background-color: #EA5455;
+                        color: #F9F5EB;
+                        font-weight: normal;
+                    }
+        
+
+

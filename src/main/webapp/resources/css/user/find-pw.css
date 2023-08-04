@@ -1,0 +1,103 @@
+main {
+    background-color: #F3F3F3;
+    width: 100%;
+    height: 761px;
+}
+
+    #find-pw-title {
+        width: 1000px;
+        margin: 0 auto; 
+        text-align: center;
+        padding-top: 100px;
+    }
+
+        #find-pw-title > h1 {
+            display: inline-block;
+            font-family: 'Chosunilbo_myungjo', sans-serif, serif;
+            font-size: 2.5em;
+            padding-bottom: 25px;
+        }
+
+        #colorBox {
+            height: 8px;
+            width: inherit;
+            margin: 10px auto;
+            background: linear-gradient(90deg, #002B5B, #002B5B 8%, #EA5455 8%, #EA5455 18%, #e4dccf 18%, #e4dccf 32%, #F9F5EB 32%, #F9F5EB 68%, #e4dccf 68%, #e4dccf 82%, #EA5455 82%, #EA5455 92%, #002B5B 92%, #002B5B 100%);
+        }
+
+    #find-pw {
+        height: 550px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        #find-pw > div {
+            width: 150px;
+            height: 150px;
+            background-color: rgba(234, 84, 85, 70%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px;
+        }
+
+        #find-pw img {
+            width: 100px;
+            margin-bottom: 5px;
+        }
+
+        form input:not(input[type=checkbox]) {
+                width: 255px;
+                height: 45px;
+                margin: 5px;
+                padding: 0 20px;
+                border: 2px solid #bbb;
+                border-radius: 8px;
+                font-size: 0.9em;
+            }
+
+        form input:not(input[type=checkbox]) {
+            width: 255px;
+            height: 45px;
+            margin: 5px;
+            padding: 0 20px;
+            border: 2px solid #bbb;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+
+        /* 이벤트 정보 */
+        label[for=new-pw] {
+            display: flex;
+            width: 290px;
+            font-size: 0.78em;
+            color: #666666;
+            line-height: 1.3em;
+            text-align: left;
+            margin-top: 5px;
+        }
+
+            #new-pw {
+                margin-top: 10px;
+                /* 체크박스 색상 변경 */
+                accent-color: #EA5455;           
+                position: relative;         
+                top: -12px;
+                margin-right: 8px;
+                margin-left: 15px;
+            }
+        
+        #find-pw-btn  {
+            background-color: #EA5455;
+            color: #F9F5EB;
+            width: 300px;
+            height: 45px;
+            margin-top: 15px;
+            padding: 0 20px;
+            border: 2px solid #EA5455;
+            border-radius: 8px;
+            font-size: 0.9em;
+            cursor:pointer;
+        }

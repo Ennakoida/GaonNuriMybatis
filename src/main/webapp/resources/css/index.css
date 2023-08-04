@@ -1,0 +1,218 @@
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #ccc;
+}
+
+td {
+    width: 200px;
+    height: 200px;
+}
+
+main {
+    background-color: #f9f5eb;
+    width: 100%;
+    height: auto;
+}
+
+    /* 이미지 슬라이드 */
+    #main-img-slide {
+        height: 500px;
+        text-align: left;
+    }
+    
+        #main-img-logo {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 10;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+            #main-img-logo>h1 {
+                font-family: 'Chosunilbo_myungjo', sans-serif, serif;
+                color: #B5B5B5;
+                font-size: 3.5em;
+                font-weight: lighter;
+                margin: 50px;
+            }
+
+            #main-img-logo>p {
+                width: 100%;
+                color: #bbb;
+                font-size: 1.0em;
+                margin-bottom: 50px;
+            }
+
+        .banner-slide {
+            filter: brightness(50%);
+        }
+
+    /* 고궁 행사 */
+    #main-description{
+        background-color: #f9f5eb;
+        height: 700px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+        #main-description>h3 {
+            padding: 70px;
+            font-size: 1.6em;
+        }
+
+        #main-description-div {
+            width: 55%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+            .palace {
+                display: inline-block;
+            }
+
+                .palace-img {
+                    border-radius: 100%;
+                    width: 150px;
+                    text-align: center;
+                }
+
+                .palace-img:hover {
+                    scale: 1.2;
+                }
+
+                .palace>h4 {
+                    padding: 20px;
+                    font-size: 1.15em;
+                }
+
+        /* 예매하기 버튼 */
+        #main-description > button {
+            background-color: #002B5B;
+            border: 2px solid #002B5B;
+            color: #f9f5eb;
+            border-radius: 30px;
+            width: 150px;
+            height: 45px;
+            margin: 50px;
+            font-size: 0.9em;
+        }
+
+        #main-description > button:hover {
+            background-color: #f9f5eb;
+            color: #002B5B;
+        }
+
+    /* 다양한 지원 제공 */
+    #main-service{
+        background-color: #A6A7AF;
+        height: 660px;
+    }
+
+        #main-service>h3 {
+            padding: 65px;
+            font-size: 1.5em;
+            color: #fff;
+        }
+
+            table tr:first-child>td:first-child {
+                background-image: url("/resources/img/index/service/한복댕기.jpg");
+                background-size: cover;
+            }
+
+            table tr:first-child>td:nth-child(2) {
+                background-color: #002B5B;
+                background-size: cover;
+            }
+
+            table tr:first-child>td:nth-child(3) {
+                width: 400px;
+                background-image: url("/resources/img/index/service/한복단체.jpg");
+                background-size: cover;
+            }
+
+            table tr:first-child>td:nth-child(4) {
+                width: 400px;
+                background-image: url("/resources/img/index/service/시티투어버스.png");
+                background-size: cover;
+            }
+
+            table tr:last-child>td:nth-child(2) {
+                background-image: url("/resources/img/index/service/한복.png");
+                background-size: cover;
+            }        
+
+            #hanbok-rental-marketing {
+                width: 90%;
+                text-align: left;
+                color: #B5B5B5;
+                --font-size: 0.9em;
+                line-height: 1.2;
+                margin-left: 15px;
+            }
+        
+        /* 한복 대여 서비스 */
+        #rental-service {
+            background-color: #EA5455;
+            color: #fff;
+            line-height: 1.2;
+        }
+
+            /* 대여하기 버튼 */
+            #rental-service > button {
+                background-color: #EA5455;
+                border: 1px solid #fff;
+                border-radius: 50px;
+                color: #fff;
+                margin-top: 20px;
+                padding: 6px 20px;
+                font-size: 0.9em;
+            }
+
+            #rental-service > button:hover {
+                background-color: #fff;
+                color: #EA5455;
+            }
+
+        /* 셔틀 버스 */
+        #bus-service {
+            background-color: #272D3D;
+            /* background-color: #f9f5eb; */
+            color: #B5B5B5;
+            /* color: #EA5455; */
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            top: -100px;
+            left: 200px;
+        }
+
+            /* 신청하기 버튼 */
+            #bus-service > button {
+                background-color: #272D3D;
+                border: 1px solid #B5B5B5;
+                border-radius: 50px;
+                width: 95px;
+                height: 30px;
+                color: #B5B5B5;
+                margin: 0 auto;
+                margin-top: 20px;
+                padding: 6px 20px;
+                font-size: 0.9em;
+            }
+
+            #bus-service > button:hover {
+                background-color: #B5B5B5;
+                color: #272D3D;
+            }

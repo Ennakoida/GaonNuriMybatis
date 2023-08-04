@@ -1,0 +1,184 @@
+main {
+    background-color: #F3F3F3;
+    width: 100%;
+    height: auto;
+}
+
+    #reservation-title {
+        width: 1000px;
+        margin: 0 auto; 
+        text-align: center;
+        padding-top: 100px;
+    }
+
+        #reservation-title > h1 {
+            display: inline-block;
+            font-family: 'Chosunilbo_myungjo', sans-serif, serif;
+            font-size: 2.5em;
+            padding-bottom: 25px;
+        }
+
+        #colorBox {
+            height: 8px;
+            width: inherit;
+            margin: 10px auto;
+            background: linear-gradient(90deg, #002B5B, #002B5B 8%, #EA5455 8%, #EA5455 18%, #e4dccf 18%, #e4dccf 32%, #F9F5EB 32%, #F9F5EB 68%, #e4dccf 68%, #e4dccf 82%, #EA5455 82%, #EA5455 92%, #002B5B 92%, #002B5B 100%);
+        }
+
+    /* 행사 예매 */
+    #reservation {
+        text-align: center;
+        width: 1000px;
+        margin-top: 90px; 
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 110px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+        /* 달력 */
+        #calendar {
+            width: 500px;
+            height: 500px;
+            color: #EA5455;
+        }
+
+        /* 예매 선택창  */
+        #reservation-input {
+            height: auto;
+        }
+
+            label:not(label[for=login-user]){
+                display: inline-block;
+                width: 295px;
+                text-align: left;
+                font-weight: bold;
+                margin-top: 15px;
+                margin-bottom: 3px;
+            }
+            
+
+            select {
+                /* select 화살표 디자인  */
+                -webkit-appearance:none; /* for chrome */
+                -moz-appearance:none; /*for firefox*/
+                appearance:none;
+                background-position: calc(100% - 19px) center !important;
+                background: url("img/select-icon.png") no-repeat 97% 50%/15px auto;
+                padding: 8px 32px 8px 16px;
+
+                /* select 창 디자인  */
+                width: 300px;
+                height: 50px;
+                margin: 5px;
+                padding: 0 20px;
+                background-color: #fff;
+                border: 2px solid #bbb;
+                border-radius: 8px;
+                font-size: 0.9em;
+                color: #a9a9a9;
+            }
+
+                select option, select optgroup {
+                    color: #000;
+                }
+
+            input[type=date] {
+                color: #a9a9a9;
+            }
+
+            label[for=select-place] {
+                margin-top: 0px !important;
+            }
+
+            input:not(input[type=checkbox]) {
+                width: 255px;
+                height: 45px;
+                margin: 5px;
+                padding: 0 20px;
+                border: 2px solid #bbb;
+                border-radius: 8px;
+                font-size: 0.9em;
+            }
+
+                /* 달력 아이콘 클릭 영역 넓게 */
+                #select-date::-webkit-calendar-picker-indicator {
+                    width: 20px; 
+                    height: 20px;
+                    padding-left: 238px;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    position: absolute;
+                    z-index: 1;
+                }
+
+                /* 숫자 화살표 크기 크게 */
+                #select-people::-webkit-inner-spin-button {
+                    opacity: 1;
+                    height: 30px;
+                }         
+            
+            /* 예매자 정보 */
+            #user-info {
+                margin-top: 40px;
+            }
+
+                #user-info > div {
+                    display: flex;
+                    padding-left: 7px;
+                    margin-bottom: 15px;
+                }
+
+                    #user-info h3 {
+                        color: #002B5B;
+                    }
+                
+                    /* 예매자 정보 동일 선택창 */
+                    #user-info > div > label:first-of-type {
+                        font-size: 0.78em;
+                        color: #666666;
+                        margin-left: 15px;
+                        margin-top: -2.5px;
+                    }
+
+                        #login-user {
+                            /* 체크박스 색상 변경 */
+                            accent-color: #002B5B;           
+                            position: relative;         
+                            top: 1.5px;
+                        }
+
+            #reservation-btn {
+                display: flex;
+                justify-content: space-around;
+                text-align: center;
+                margin-top: 35px;
+            }
+
+                /* 예매하기 버튼 */
+                #submit-btn  {
+                    background-color: #002B5B;
+                    color: #F9F5EB;
+                    width: 142px;
+                    height: 45px;
+                    margin: 0px;
+                    padding: 0 20px;
+                    border: 2px solid #002B5B;
+                    border-radius: 8px;
+                    font-size: 0.9em;
+                    cursor:pointer;
+                }
+
+                /* 취소하기 버튼 */
+                #reset-btn  {
+                    color: #002B5B;
+                    width: 142px;
+                    height: 45px;
+                    margin: 0px;
+                    padding: 0 20px;
+                    border: 2px solid #002B5B;
+                    border-radius: 8px;
+                    font-size: 0.9em;
+                    cursor:pointer;
+                }
