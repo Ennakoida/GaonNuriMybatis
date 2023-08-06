@@ -33,12 +33,12 @@ public class NoticeController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY NOTICE_NO DESC) ROW_NUM, NOTICE_TBL.* FROM NOTICE_TBL) WHERE ROW_NUM BETWEEN ? AND ?
 		NoticeService service = new NoticeService();
-		int currentPage = Integer.parseInt(request.getParameter("currentPage"));
-		PageData pd = service.selectNoticeList(currentPage);
-		List<Notice> nList = pd.getnList();
+		String page = request.getParameter("currentPage") != null ? request.getParameter("currentPage") : "1";
+		int currentPage = Integer.parseInt(page);
+		List<Notice> nList = service.selectNoticeList(currentPage);
 		request.setAttribute("nList", nList);
-		request.setAttribute("pageNavi", pd.getPageNavi());
 		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/notice/notice.jsp");
 		view.forward(request, response);
 	}

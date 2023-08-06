@@ -21,7 +21,7 @@
                 <section id="notice">
                     <table frame=void>
                         <tr>
-                            <th>접수번호</th>
+                            <th>공지번호</th>
                             <th>공지사항</th>
                             <th>작성일</th>
                         </tr>

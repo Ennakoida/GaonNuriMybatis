@@ -7,40 +7,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
+import org.apache.ibatis.session.SqlSession;
+
 import notice.model.vo.Notice;
 
 public class NoticeDAO {
 
-	public List<Notice> selectNoticeList(Connection conn, int currentPage) {
-		PreparedStatement pstmt = null;
-		ResultSet rset = null;
-		List<Notice> nList = new ArrayList<Notice>();
-//		String query = "SELECT * FROM NOTICE_TBL ORDER BY NOTICE_NO DESC";
-		String query = "SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY NOTICE_NO DESC) ROW_NUM, NOTICE_TBL.* FROM NOTICE_TBL) WHERE ROW_NUM BETWEEN ? AND ?";
-		int recordCountPerPage = 10;
-		int start = currentPage * recordCountPerPage - (recordCountPerPage - 1);		
-		int end = currentPage * recordCountPerPage;
+	public List<Notice> selectNoticeList(SqlSession session, int currentPage) {
+		int limit = 10;
+		int offset = (currentPage - 1) * limit;
+		RowBounds rowBounds = new RowBounds(offset, limit);
 		
-		try {
-			pstmt = conn.prepareStatement(query);
-			pstmt.setInt(1, start);
-			pstmt.setInt(2, end);
-			rset = pstmt.executeQuery();
-			
-			while(rset.next()) {
-				Notice notice = rsetToNotice(rset);
-				nList.add(notice);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				rset.close();
-				pstmt.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
+		List<Notice> nList = session.selectList("NoticeMapper.selectNoticeList", null, rowBounds);
 		return nList;
 	}
 	

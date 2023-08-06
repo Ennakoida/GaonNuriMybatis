@@ -17,5 +17,7 @@
   </environments>
   <mappers>
   		<mapper resource="mappers/user-mapper.xml"/>
+  		<mapper resource="mappers/reserve-mapper.xml"/>
+  		<mapper resource="mappers/notice-mapper.xml"/>
   </mappers>
 </configuration>
