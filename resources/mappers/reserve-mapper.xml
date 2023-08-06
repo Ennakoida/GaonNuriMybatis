@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="ReserveMapper">
+	
+	<resultMap type="event.reservation.model.vo.Reserve" id="reserveResultMap">
+		<id     property="reservePlace"  column="RESERVE_PLACE"/>
+		<result property="reserveDate"   column="RESERVE_DATE"/>
+		<result property="reserveTime"   column="RESERVE_TIME"/>
+		<result property="reservePeople" column="RESERVE_PEOPLE"/>
+		<result property="reserveName"   column="RESERVE_NAME"/>
+		<result property="reservePhone"  column="RESERVE_PHONE"/>
+		<result property="reserveEmail"  column="RESERVE_EMAIL"/>
+	</resultMap>
+
+	<insert id="insertReserve">
+		INSERT INTO RESERVE_TBL VALUES(#{ reservePlace }, #{ reserveDate }, #{ reserveTime }, #{ reservePeople }, #{ reserveName }, #{ reservePhone }, #{ reserveEmail, jdbcType=VARCHAR })
+	</insert>
+
+</mapper>

@@ -78,7 +78,7 @@ public class ReserveController extends HttpServlet {
 		if(result > 0) {
 			// 성공
 			request.setAttribute("msg", "행사 예매");
-			request.setAttribute("url", "/event/reservation.do");
+			request.setAttribute("url", "/index.jsp");
 			request.getRequestDispatcher("/WEB-INF/views/common/serviceSuccess.jsp").forward(request, response);
 		} else {
 			// 실패

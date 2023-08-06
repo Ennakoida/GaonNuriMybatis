@@ -15,7 +15,7 @@
 	</resultMap>
 
 	<insert id="insertUser">
-		INSERT INTO USER_TBL VALUES(#{ userId }, #{ userPw }, #{ userName }, #{ userPhone }, #{ userEmail }, #{ userEventYn })
+		INSERT INTO USER_TBL VALUES(#{ userId }, #{ userPw }, #{ userName }, #{ userPhone }, #{ userEmail, jdbcType=VARCHAR }, #{ userEventYn, jdbcType=VARCHAR })
 	</insert>
 	
 	<select id="selectCheckLogin" resultMap="userResultMap">
@@ -28,5 +28,10 @@
 	
 	<select id="selectPwByIdPhone" resultMap="userResultMap" resultType="int">
 		SELECT COUNT(*) FROM USER_TBL WHERE USER_ID = #{ userId } AND USER_PHONE = #{ userPhone }
+	</select>
+	
+<!-- 	reserve -->
+	<select id="selectOneById" resultMap="userResultMap">
+		SELECT * FROM USER_TBL WHERE USER_ID = #{ userId }
 	</select>
 </mapper>

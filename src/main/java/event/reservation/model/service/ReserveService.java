@@ -1,44 +1,38 @@
 package event.reservation.model.service;
 
-import java.sql.Connection;
+import org.apache.ibatis.session.SqlSession;
 
-import common.JDBCTemplate;
+import common.SqlSessionTemplate;
 import event.reservation.model.dao.ReserveDAO;
 import event.reservation.model.vo.Reserve;
 import user.model.vo.User;
 
 public class ReserveService {
 	
-	private JDBCTemplate jdbcTemplate;
 	private ReserveDAO rDao;
 	
 	public ReserveService() {
-		jdbcTemplate = JDBCTemplate.getInstance();
 		rDao = new ReserveDAO();
 	}
 
 	public int insertReserve(Reserve reserve) {
-		Connection conn = jdbcTemplate.createConnection();
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		int result = rDao.insertReserve(session, reserve);
 		
-		int result = rDao.insertReserve(conn, reserve);
-		
-		// 커밋 / 롤백
 		if(result > 0) {
-			// 성공 - 커밋
-			jdbcTemplate.commit(conn);
+			session.commit();
 		} else {
-			// 실패 - 롤백
-			jdbcTemplate.rollback(conn);
+			session.rollback();
 		}
-		jdbcTemplate.close(conn);
+		session.close();
 		return result;
 	}
 
 	public User selectOneById(String userId) {
-		Connection conn = jdbcTemplate.createConnection();
+		SqlSession session = SqlSessionTemplate.getSqlSession();
 		
-		User user = rDao.selectOneById(conn, userId);
-		jdbcTemplate.close(conn);
+		User user = rDao.selectOneById(session, userId);
+		session.close();
 		return user;
 	}
 
