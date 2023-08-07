@@ -15,6 +15,15 @@ public class User {
 		this.userId = userId;
 		this.userPw = userPw;
 	}
+	
+	public User(String userId, String userPw, String userPhone, String userEmail, String userEventYn) {
+		super();
+		this.userId = userId;
+		this.userPw = userPw;
+		this.userPhone = userPhone;
+		this.userEmail = userEmail;
+		this.userEventYn = userEventYn;
+	}
 
 	public User(String userId, String userPw, String userName, String userPhone, String userEmail,
 			String userEventYn) {

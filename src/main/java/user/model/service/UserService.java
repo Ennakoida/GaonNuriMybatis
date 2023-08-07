@@ -26,6 +26,42 @@ public class UserService {
 		return result;
 	}
 
+	public int updateUser(User user) {
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		int result = uDao.updateUser(session, user);
+		if(result > 0) {
+			session.commit();
+		} else {
+			session.rollback();
+		}
+		session.close();
+		return result;
+	}
+
+	public int updatePw(User updatePass) {
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		int result = uDao.updatePw(session, updatePass);
+		if(result > 0) {
+			session.commit();
+		} else {
+			session.rollback();
+		}
+		session.close();
+		return result;
+	}
+
+	public int deleteUser(String userId) {
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		int result = uDao.deleteUser(session, userId);
+		if(result > 0) {
+			session.commit();
+		} else {
+			session.rollback();
+		}
+		session.close();
+		return result;
+	}
+
 	public User selectCheckLogin(User user) {
 		SqlSession session = SqlSessionTemplate.getSqlSession();
 		User uOne = uDao.selectCheckLogin(session, user);
@@ -45,6 +81,13 @@ public class UserService {
 		int resultCount = uDao.selectPwByIdPhone(session, user);
 		session.close();
 		return resultCount;
+	}
+
+	public User selectOneById(String userId) {
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		User user = uDao.selectOneById(session, userId);
+		session.close();
+		return user;
 	}
 
 }

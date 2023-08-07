@@ -1,0 +1,115 @@
+main {
+    background-color: #F3F3F3;
+    width: 100%;
+    height: auto;
+}
+
+    main>section:first-child {
+        width: 720px;
+        height: 100%;
+        margin: 0 auto; 
+    }
+
+    #myinfo-title {
+        width: 1000px;
+        margin: 0 auto; 
+        text-align: center;
+        padding-top: 100px;
+    }
+
+        #myinfo-title > h1 {
+            display: inline-block;
+            font-family: 'Chosunilbo_myungjo', sans-serif, serif;
+            font-size: 2.5em;
+            padding-bottom: 25px;
+        }
+
+        #myinfo-title > p {
+            display: inline-block;
+            width: auto;
+            color: #666666;
+            padding-left: 5px;
+            font-size: 0.95em;
+        }
+
+        #colorBox {
+            height: 8px;
+            width: inherit;
+            margin: 10px auto;
+            background: linear-gradient(90deg, #002B5B, #002B5B 8%, #EA5455 8%, #EA5455 18%, #e4dccf 18%, #e4dccf 32%, #F9F5EB 32%, #F9F5EB 68%, #e4dccf 68%, #e4dccf 82%, #EA5455 82%, #EA5455 92%, #002B5B 92%, #002B5B 100%);
+        }
+
+    #myinfo {
+        width: 100%;
+        text-align: center;
+        margin-top: 55px;
+        padding-bottom: 100px;
+    }
+
+        label:not(label[for=user-event-yn]){
+            display: inline-block;
+            width: 295px;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 3px;
+        }
+        
+            form input:not(input[type=checkbox]) {
+                width: 255px;
+                height: 45px;
+                margin: 5px;
+                padding: 0 20px;
+                border: 2px solid #bbb;
+                border-radius: 8px;
+                font-size: 0.9em;
+            }
+            
+            /* 이벤트 정보 */
+            form > label:nth-of-type(7) {
+                font-size: 0.78em;
+                color: #666666;
+            }
+
+                #user-event-yn {
+                    /* 체크박스 색상 변경 */
+                    accent-color: #002B5B;           
+                    position: relative;         
+                    top: 1.8px;
+                }
+
+            #myinfo-btn {
+                width: 295px;
+                display: flex;
+                justify-content: space-between;
+                text-align: center;
+                margin: 0 auto;
+                margin-top: 35px;
+            }
+
+                /* 수정하기 버튼 */
+                #modify-btn  {
+                    background-color: #002B5B;
+                    color: #F9F5EB;
+                    width: 142px;
+                    height: 45px;
+                    margin: 0px;
+                    padding: 0 20px;
+                    border: 2px solid #002B5B;
+                    border-radius: 8px;
+                    font-size: 0.9em;
+                    cursor:pointer;
+                }
+
+                /* 탈퇴하기 버튼 */
+                #delete-btn  {
+                    color: #002B5B;
+                    width: 142px;
+                    height: 45px;
+                    margin: 0px;
+                    padding: 0 20px;
+                    border: 2px solid #002B5B;
+                    border-radius: 8px;
+                    font-size: 0.9em;
+                    cursor:pointer;
+                }

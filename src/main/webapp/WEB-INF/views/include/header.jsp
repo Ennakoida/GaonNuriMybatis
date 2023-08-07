@@ -41,7 +41,7 @@
             </c:if>
             <c:if test="${ sessionScope.userId ne null }">
             	<li class="sub-nav"><a href="javascript:void(0)" onclick="checkLogout();">로그아웃</a></li>
-            	<li class="sub-nav"><a href="/user/myInfo.do">마이페이지</a></li>
+            	<li class="sub-nav"><a href="/user/myInfo.do?userId=${ sessionScope.userId }">마이페이지</a></li>
             </c:if>
 <!--                         <li class="sub-nav"><a href="/user/enroll.do">회원가입</a></li> -->
             <li class="sub-nav">한국어 ▾

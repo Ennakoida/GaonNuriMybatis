@@ -46,22 +46,24 @@ public class FindPwController extends HttpServlet {
 		
 		String userId = request.getParameter("user-id");
 		String userPhone = request.getParameter("user-phone");
-		String newPassword = null;
-		
-
-		for(int i=0;i<10;i++){
-	        buf.append((char)((int)(rnd.nextInt(26))+97));
-		}
-		
-		newPassword = buf.toString();
+		String newPassword = null; // 임의의 새 비밀번호
 		
 		User user = new User();
 		user.setuserId(userId);
 		user.setuserPhone(userPhone);
 		int resultCount = service.selectPwByIdPhone(user);
 		
+
+		
 		if(resultCount == 1) {
-			request.setAttribute("what", "비밀번호");
+			for(int i=0;i<10;i++){ // 임의의 새 비밀번호 (영문자열) 추출
+		        buf.append((char)((int)(rnd.nextInt(26))+97));
+			}
+			newPassword = buf.toString();
+			User updatePass = new User(userId, newPassword);
+			service.updatePw(updatePass); // 임의의 새 비밀번호 업데이트
+			
+			request.setAttribute("what", "새로운 비밀번호");
 			request.setAttribute("found", newPassword);
 			request.setAttribute("url", "/user/login.do");
 			request.getRequestDispatcher("/WEB-INF/views/user/successFinding.jsp").forward(request, response);

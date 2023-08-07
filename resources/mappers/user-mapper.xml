@@ -15,8 +15,20 @@
 	</resultMap>
 
 	<insert id="insertUser">
-		INSERT INTO USER_TBL VALUES(#{ userId }, #{ userPw }, #{ userName }, #{ userPhone }, #{ userEmail, jdbcType=VARCHAR }, #{ userEventYn, jdbcType=VARCHAR })
+		INSERT INTO USER_TBL VALUES(#{ userId }, #{ userPw }, #{ userName }, #{ userPhone }, #{ userEmail }, #{ userEventYn })
 	</insert>
+	
+	<update id="updateUser">
+		UPDATE USER_TBL SET USER_PW = #{ userPw }, USER_PHONE = #{ userPhone }, USER_EMAIL = #{ userEmail }, USER_EVENT_YN = #{ userEventYn } WHERE USER_ID = #{ userId }
+	</update>
+	
+	<update id="updatePw">
+		UPDATE USER_TBL SET USER_PW = #{ userPw } WHERE USER_ID = #{ userId }
+	</update>
+	
+	<delete id="deleteUser">
+		DELETE FROM USER_TBL WHERE USER_ID = #{ userId }
+	</delete>
 	
 	<select id="selectCheckLogin" resultMap="userResultMap">
 		SELECT * FROM USER_TBL WHERE USER_ID = #{ userId } AND USER_PW = #{ userPw }
@@ -26,11 +38,10 @@
 		SELECT * FROM USER_TBL WHERE USER_PHONE = #{ userPhone }
 	</select>
 	
-	<select id="selectPwByIdPhone" resultMap="userResultMap" resultType="int">
+	<select id="selectPwByIdPhone" resultType="_int">
 		SELECT COUNT(*) FROM USER_TBL WHERE USER_ID = #{ userId } AND USER_PHONE = #{ userPhone }
 	</select>
 	
-<!-- 	reserve -->
 	<select id="selectOneById" resultMap="userResultMap">
 		SELECT * FROM USER_TBL WHERE USER_ID = #{ userId }
 	</select>
