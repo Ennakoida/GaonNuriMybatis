@@ -65,7 +65,7 @@ main {
                 -moz-appearance:none; /*for firefox*/
                 appearance:none;
                 background-position: calc(100% - 19px) center !important;
-                background: url("img/select-icon.png") no-repeat 97% 50%/15px auto;
+                background: url("/resources/img/select-icon.png") no-repeat 97% 50%/15px auto;
                 padding: 8px 32px 8px 16px;
 
                 /* select 창 디자인  */
