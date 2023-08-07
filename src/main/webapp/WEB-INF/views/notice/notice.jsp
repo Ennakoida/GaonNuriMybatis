@@ -19,6 +19,13 @@
                 </section>
                 <!-- 공지사항 -->
                 <section id="notice">
+                                    
+                    <!-- 작성하기 버튼 -->
+<!--                     관리자 계정만 작성하기 버튼 보이도록 하기  -->
+                    <div id="write-notice">
+	                    <button onclick="location.href='#'">작성하기</button>
+                    </div>
+                    
                     <table frame=void>
                         <tr>
                             <th>공지번호</th>
@@ -36,7 +43,7 @@
 
                     <!-- 페이지 전환 버튼  -->
                     <ul id="page">
-							${ pageNavi }
+						${ pageNavi }
                     </ul>
                 </section>
             </main>

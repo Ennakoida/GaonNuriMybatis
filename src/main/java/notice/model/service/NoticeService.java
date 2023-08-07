@@ -18,11 +18,13 @@ public class NoticeService {
 	}
 
 	// 공지사항 전체 목록 조회
-	public List<Notice> selectNoticeList(int currentPage) {
+	public PageData selectNoticeList(int currentPage) {
 		SqlSession session = SqlSessionTemplate.getSqlSession();
 		List<Notice> nList = nDao.selectNoticeList(session, currentPage);
+		String pageNavi = nDao.generatePageNavi(session, currentPage);
+		PageData pd = new PageData(nList, pageNavi);
 		session.close();
-		return nList;
+		return pd;
 	}
 
 }

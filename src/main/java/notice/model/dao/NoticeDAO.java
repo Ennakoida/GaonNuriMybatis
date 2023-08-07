@@ -1,10 +1,5 @@
 package notice.model.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
@@ -23,8 +18,8 @@ public class NoticeDAO {
 		return nList;
 	}
 	
-	public String generagePageNavi(int currentPage) {		
-		int totalCount = 102; // 전체 게시물의 수
+	public String generatePageNavi(SqlSession session, int currentPage) {		
+		int totalCount = getTotalCount(session); // 전체 게시물의 수
 		int recordCountPerPage = 10; // 한 페이지당 수
 		int naviTotalCount = 0; // 네비게이터의 수
 		
@@ -65,16 +60,8 @@ public class NoticeDAO {
 		return result.toString();
 	}
 	
-	private Notice rsetToNotice(ResultSet rset) throws SQLException {
-		Notice notice = new Notice();
-		notice.setNoticeNo(rset.getInt("NOTICE_NO"));
-		notice.setNoticeSubject(rset.getString("NOTICE_SUBJECT"));
-		notice.setNoticeContent(rset.getString("NOTICE_CONTENT"));
-		notice.setNoticeDate(rset.getDate("NOTICE_DATE"));
-		notice.setUpdateDate(rset.getDate("UPDATE_DATE"));
-		notice.setViewCount(rset.getInt("VIEW_COUNT"));
-		
-		return notice;
+	private int getTotalCount(SqlSession session) {
+		int totalCount = session.selectOne("NoticeMapper.getTotalCount");
+		return totalCount;
 	}
-
 }
