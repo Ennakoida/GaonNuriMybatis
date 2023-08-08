@@ -72,34 +72,67 @@ main {
             margin: 10px auto;
             background: linear-gradient(90deg, #002B5B, #002B5B 8%, #EA5455 8%, #EA5455 18%, #e4dccf 18%, #e4dccf 32%, #F9F5EB 32%, #F9F5EB 68%, #e4dccf 68%, #e4dccf 82%, #EA5455 82%, #EA5455 92%, #002B5B 92%, #002B5B 100%);
         }
-
-    /* 작성하기 버튼 */
-    #write-notice {
-    	width: inherit;
-    	display: flex;
-    	justify-content: right;    	
-        padding-top: 30px;
-        text-align: center;
+        
+    /* 작성하기, 검색창  */
+	#notice-menu {
+        	display: flex;
+        	justify-content: space-between;
+        	align-items: flex-end;
     }
     
-	    #write-notice > button  {
-	        background-color: #002B5B;
-	        color: #F3F3F3;
-	        width: 80px;
-	        height: 25px;
-	        margin: 0px;
-	        border: 2px solid #002B5B;
-	        border-radius: 8px;
-	        font-size: 0.8em;
-	        cursor:pointer;
+        /* 작성하기 버튼 */
+	    #write-notice {
+	    	width: inherit;
+	    	display: flex;
+	    	justify-content: right;    	
 	        text-align: center;
+	        display: inline-block;
+	    }
+    
+		    #write-notice > button  {
+		    	background-color: #002B5B;
+		        color: #F3F3F3;
+	            width: 142px;
+	            height: 45px;
+		        margin: 0px;
+		        border: 2px solid #002B5B;
+		        border-radius: 8px;
+		        font-size: 0.9em;
+		        cursor:pointer;
+		        text-align: center;
+		    }
+
+	    /* 검색창 */
+	    #search-notice {
+	    	display: flex;
+	    	justify-content: right;
 	    }
 	    
-/* 	    #write-notice > button:hover { */
-/*             background-color: #F3F3F3; */
-/*             color: #002B5B; */
-/*         } */
-        
+	    #search-notice-input {
+	    	width: 218px;
+	    	display: flex;
+	    	justify-content: right; 
+	        padding-top: 35px;
+	        border-bottom: solid 2px #002B5B;
+	    }
+	    
+		    #search-notice-input > input  {
+		    	padding: 8px;
+		        border-style : none;
+		        background-color: #F3F3F3;
+		    }
+		    
+		    #search-notice-icon {
+		    	display: flex;
+		    	align-items: center;
+		    }
+		    
+		    #search-notice-icon img {
+		    	width: 25px;
+		    	height: 25px;
+		    }
+		
+		        
     /* 공지사항 */
     #notice {
         width: 950px;
@@ -109,9 +142,10 @@ main {
         #notice > table {
             display: flex;
             justify-content: center;
-            padding-top: 7px;
+            padding-top: 15px;
             padding-bottom: 50px;
         }
+
 
     /* 페이지 전환 버튼 */
     #page {
@@ -126,11 +160,7 @@ main {
             cursor: pointer;
         }
 
-/*         #page li:nth-child(2) { */
-/*             color: #EA5455; */
-/*             font-weight: bold; */
-/*         } */
-
         #page li:not(li:first-child, li:last-child):hover {
             color: #EA5455;
         }
+        

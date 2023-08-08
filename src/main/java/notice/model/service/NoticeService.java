@@ -17,6 +17,18 @@ public class NoticeService {
 		nDao = new NoticeDAO();
 	}
 
+	public int insertNotice(Notice notice) {
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		int result = nDao.insertNotice(session, notice);
+		if(result > 0) {
+			session.commit();
+		} else {
+			session.rollback();
+		}
+		session.close();
+		return result;
+	}
+
 	// 공지사항 전체 목록 조회
 	public PageData selectNoticeList(int currentPage) {
 		SqlSession session = SqlSessionTemplate.getSqlSession();
@@ -25,6 +37,13 @@ public class NoticeService {
 		PageData pd = new PageData(nList, pageNavi);
 		session.close();
 		return pd;
+	}
+
+	public List<Notice> selectNoticeSearch(String noticeSearch) {
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		List<Notice> nList = nDao.selectNoticeSearch(session, noticeSearch);
+		session.close();
+		return nList;
 	}
 
 }

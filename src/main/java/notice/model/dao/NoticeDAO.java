@@ -9,6 +9,11 @@ import notice.model.vo.Notice;
 
 public class NoticeDAO {
 
+	public int insertNotice(SqlSession session, Notice notice) {
+		int result = session.insert("NoticeMapper.insertNotice", notice);
+		return result;
+	}
+
 	public List<Notice> selectNoticeList(SqlSession session, int currentPage) {
 		int limit = 10;
 		int offset = (currentPage - 1) * limit;
@@ -63,5 +68,10 @@ public class NoticeDAO {
 	private int getTotalCount(SqlSession session) {
 		int totalCount = session.selectOne("NoticeMapper.getTotalCount");
 		return totalCount;
+	}
+
+	public List<Notice> selectNoticeSearch(SqlSession session, String noticeSearch) {
+		List<Notice> nList = session.selectList("NoticeMapper.selectNoticeSearch", noticeSearch);
+		return nList;
 	}
 }

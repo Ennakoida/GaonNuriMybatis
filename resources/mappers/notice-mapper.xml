@@ -13,6 +13,10 @@
 		<result property="updateDate"     column="UPDATE_DATE"/>
 		<result property="viewCount"      column="VIEW_COUNT"/>
 	</resultMap>
+	
+	<insert id="insertNotice">
+		INSERT INTO NOTICE_TBL VALUES(SEQ_NOTICENO.NEXTVAL, #{ noticeSubject }, #{ noticeContent }, DEFAULT, DEFAULT, DEFAULT)
+	</insert>
 
 	<select id="selectNoticeList" resultMap="noticeResultMap">
 		SELECT * FROM NOTICE_TBL ORDER BY NOTICE_NO DESC
@@ -20,5 +24,9 @@
 	
 	<select id="getTotalCount" resultType="_int">
 		SELECT COUNT(*) FROM NOTICE_TBL
+	</select>
+	
+	<select id="selectNoticeSearch" resultMap="noticeResultMap">
+		SELECT * FROM NOTICE_TBL WHERE NOTICE_SUBJECT LIKE '%#{ noticeSearch }%'
 	</select>
 </mapper>

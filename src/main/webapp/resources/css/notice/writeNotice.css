@@ -1,0 +1,125 @@
+th {
+    border: 2px solid #bbb;
+    font-family: 'Chosunilbo_myungjo', sans-serif, serif;
+    font-size: 1.2em;
+    height: 50px;
+    background-color: #002B5B;
+    color: #B5B5B5;
+}
+
+td {
+    border: 2px solid #bbb;
+    height: 40px;
+}
+
+td:first-child {
+    width: 140px;
+    color: #002B5B;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+td:nth-child(2) {
+    width: 800px;
+    text-align: left;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+td:nth-child(2):hover {
+    text-decoration: underline;
+    text-decoration-color: #EA5455;
+    color: #EA5455;
+}
+
+td:last-child {
+    width: 210px;
+    color: #a0a0a0;
+    font-size: 0.9em;
+}
+
+td:first-child, th:first-child {
+	border-left: 0;
+}
+
+td:last-child, th:last-child {
+	border-right: 0;
+}
+
+main {
+    background-color: #F3F3F3;
+    width: 100%;
+    height: auto;
+}
+
+    #notice-insert-title {
+        width: 1000px;
+        margin: 0 auto; 
+        text-align: center;
+        padding-top: 100px;
+    }
+
+        #notice-insert-title > h1 {
+            display: inline-block;
+            font-family: 'Chosunilbo_myungjo', sans-serif, serif;
+            font-size: 2.5em;
+            padding-bottom: 25px;
+        }
+
+        #colorBox {
+            height: 8px;
+            width: inherit;
+            margin: 10px auto;
+            background: linear-gradient(90deg, #002B5B, #002B5B 8%, #EA5455 8%, #EA5455 18%, #e4dccf 18%, #e4dccf 32%, #F9F5EB 32%, #F9F5EB 68%, #e4dccf 68%, #e4dccf 82%, #EA5455 82%, #EA5455 92%, #002B5B 92%, #002B5B 100%);
+        }		
+		        
+    /* 공지사항 작성 */
+    #notice-insert {
+    	margin: 0 auto;
+    	margin-top : 60px;
+    }
+    
+	    #notice-subject > input {
+	    	width: 715px;	
+	    	padding: 15px;
+	    }
+	    
+	    #notice-content > textarea {
+	    	resize: none;
+	    	padding: 15px;
+	    }
+	    
+	    #notice-insert div:last-child {
+	    	text-align: right;
+	    	width: 750px;
+	    	margin: 0 auto;
+	    	padding-top: 15px;
+	    	padding-bottom: 50px;	
+	    }
+	    
+		    #notice-insert div:last-child > input:first-child {
+		    	background-color: #F3F3F3;
+		        color: #002B5B;
+                width: 142px;
+                height: 45px;
+		        margin: 0px;
+		        border: 2px solid #002B5B;
+		        border-radius: 8px;
+		        font-size: 0.9em;
+		        cursor:pointer;
+		        text-align: center;
+		    }
+		    
+    	    #notice-insert div:last-child > input:last-child {
+		    	background-color: #002B5B;
+		        color: #F3F3F3;
+                width: 142px;
+                height: 45px;
+		        margin: 0px;
+		        border: 2px solid #002B5B;
+		        border-radius: 8px;
+		        font-size: 0.9em;
+		        cursor:pointer;
+		        text-align: center;
+		    }
+	    

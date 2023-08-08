@@ -19,12 +19,30 @@
                 </section>
                 <!-- 공지사항 -->
                 <section id="notice">
-                                    
-                    <!-- 작성하기 버튼 -->
-<!--                     관리자 계정만 작성하기 버튼 보이도록 하기  -->
-                    <div id="write-notice">
-	                    <button onclick="location.href='#'">작성하기</button>
-                    </div>
+                
+                	<div id="notice-menu">
+	                    <!-- 작성하기 버튼 -->
+						<!-- 관리자 계정(admin)만 작성하기 버튼 보임  -->
+						<c:if test="${ sessionScope.userId eq 'admin' }">
+		                    <div id="write-notice">
+			                    <button onclick="location.href='/notice/writeNotice.do'">작성하기</button>
+		                    </div>
+	                    </c:if>
+	                    <c:if test="${ sessionScope.userId ne 'admin' }">
+		                    <div id="write-notice" style="visibility: hidden;">
+			                    <button onclick="location.href='/notice/writeNotice.do'">작성하기</button>
+		                    </div>
+	                    </c:if>
+						<!--  검색창 -->
+						<div id="search-notice">
+		                    <div id="search-notice-input">
+		                    	<input type="search" name="notice-search" placeholder="검색어 입력">
+		                    	<div id="search-notice-icon">
+			                    	<a href="/notice/search.do"><img alt="검색" src="/resources/img/search-icon.png"></a>
+		                    	</div>
+		                    </div>
+						</div>
+                	</div>
                     
                     <table frame=void>
                         <tr>
@@ -40,7 +58,7 @@
 	                        </tr>
                         </c:forEach>
                     </table>
-
+                    
                     <!-- 페이지 전환 버튼  -->
                     <ul id="page">
 						${ pageNavi }
