@@ -1,9 +1,6 @@
 package notice.controller;
 
 import java.io.IOException;
-import java.util.List;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,19 +9,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import notice.model.service.NoticeService;
 import notice.model.vo.Notice;
-import notice.model.vo.PageData;
 
 /**
- * Servlet implementation class NoticeController
+ * Servlet implementation class DetailController
  */
-@WebServlet("/notice/notice.do")
-public class NoticeController extends HttpServlet {
+@WebServlet("/notice/detail.do")
+public class DetailController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public NoticeController() {
+    public DetailController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,18 +29,16 @@ public class NoticeController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY NOTICE_NO DESC) ROW_NUM, NOTICE_TBL.* FROM NOTICE_TBL) WHERE ROW_NUM BETWEEN ? AND ?
-		NoticeService service = new NoticeService();
-		String page = request.getParameter("currentPage") != null ? request.getParameter("currentPage") : "1";
-		int currentPage = Integer.parseInt(page);
-		PageData pd = service.selectNoticeList(currentPage);
-		List<Notice> nList = pd.getnList();
-		String pageNavi = pd.getPageNavi();
+		int noticeNo = Integer.parseInt(request.getParameter("noticeNo"));
 		
-		request.setAttribute("nList", nList);
-		request.setAttribute("pageNavi", pageNavi);
-		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/notice/notice.jsp");
-		view.forward(request, response);
+		NoticeService service = new NoticeService();
+		Notice notice = service.selectOneByNo(noticeNo);
+		
+		if(notice != null) {
+			request.setAttribute("notice", notice);
+			request.getRequestDispatcher("/WEB-INF/views/notice/noticeDetail.jsp").forward(request, response);
+		} else {
+		}
 	}
 
 	/**

@@ -50,18 +50,18 @@
                             <th>공지사항</th>
                             <th>작성일</th>
                         </tr>
-                        <c:forEach var="notice" items="${ nList }">
+                        <c:forEach var="search" items="${ sList }">
 	                        <tr>
-	                        	<td>${ notice.noticeNo }</td>
+	                        	<td>${ search.noticeNo }</td>
 	                        	<td><a href="/notice/detail.do?noticeNo=${ notice.noticeNo }" id="noticeSubject">${ notice.noticeSubject }</a></td>
-	                        	<td>${ notice.noticeDate }</td>
+	                        	<td>${ search.noticeDate }</td>
 	                        </tr>
                         </c:forEach>
                     </table>
                     
                     <!-- 페이지 전환 버튼  -->
                     <ul id="page">
-						${ pageNavi }
+						${ sPageNavi }
                     </ul>
                 </section>
             </main>

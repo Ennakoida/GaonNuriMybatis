@@ -11,12 +11,21 @@ public class Notice {
 	private Date updateDate;
 	private int viewCount;
 	
+	public Notice() {}
+	
 	public Notice(String noticeSubject, String noticeContent) {
 		super();
 		this.noticeSubject = noticeSubject;
 		this.noticeContent = noticeContent;
 	}
 	
+	public Notice(int noticeNo, String noticeSubject, String noticeContent) {
+		super();
+		this.noticeNo = noticeNo;
+		this.noticeSubject = noticeSubject;
+		this.noticeContent = noticeContent;
+	}
+
 	public int getNoticeNo() {
 		return noticeNo;
 	}

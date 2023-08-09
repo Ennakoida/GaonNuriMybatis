@@ -19,16 +19,26 @@ td:first-child {
     font-size: 0.9em;
 }
 
-td:nth-child(2) {
+td:nth-child(2){
     width: 800px;
     text-align: left;
     padding-left: 20px;
     cursor: pointer;
 }
 
+#noticeSubject {
+	color: #000;
+    text-align: left;
+    cursor: pointer;
+}
+
 td:nth-child(2):hover {
     text-decoration: underline;
     text-decoration-color: #EA5455;
+    color: #EA5455;
+}
+
+#noticeSubject:hover {
     color: #EA5455;
 }
 
