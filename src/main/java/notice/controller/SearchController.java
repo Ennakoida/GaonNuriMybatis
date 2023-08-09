@@ -43,9 +43,14 @@ public class SearchController extends HttpServlet {
 		List<Notice> sList = pd.getnList();
 		String sPageNavi = pd.getPageNavi();
 		
-		request.setAttribute("sList", sList);
-		request.setAttribute("sPageNavi", sPageNavi);
-		request.getRequestDispatcher("/WEB-INF/views/notice/searchNotice.jsp").forward(request, response);
+		if(!sList.isEmpty()) {
+			request.setAttribute("noticeSearch", noticeSubject);
+			request.setAttribute("sList", sList);
+			request.setAttribute("sPageNavi", sPageNavi);
+			request.getRequestDispatcher("/WEB-INF/views/notice/searchNotice.jsp").forward(request, response);
+		} else {
+			request.getRequestDispatcher("/WEB-INF/views/notice/noticeNone.jsp").forward(request, response);
+		}
 	}
 
 	/**

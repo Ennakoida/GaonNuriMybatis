@@ -41,10 +41,14 @@ public class NoticeController extends HttpServlet {
 		List<Notice> nList = pd.getnList();
 		String pageNavi = pd.getPageNavi();
 		
-		request.setAttribute("nList", nList);
-		request.setAttribute("pageNavi", pageNavi);
-		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/notice/notice.jsp");
-		view.forward(request, response);
+		if(!nList.isEmpty()) {
+			request.setAttribute("nList", nList);
+			request.setAttribute("pageNavi", pageNavi);
+			RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/notice/notice.jsp");
+			view.forward(request, response);
+		} else {
+			request.getRequestDispatcher("/WEB-INF/views/notice/noticeNone.jsp").forward(request, response);
+		}
 	}
 
 	/**

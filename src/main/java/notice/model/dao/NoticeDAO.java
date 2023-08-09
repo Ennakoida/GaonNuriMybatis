@@ -60,9 +60,9 @@ public class NoticeDAO {
 
 		for(int i = startNavi; i <= endNavi; i++) {
 			if(currentPage == i) {
-				result.append("<li style='color: #EA5455; font-weight: bold;' onclick=\"location.href='/notice/notice.do?currentPage=" + i + "'\">" + i + "</li>&nbsp;&nbsp;");
+				result.append("<li style='color: #EA5455; font-weight: bold;' onclick=\"location.href='/notice/notice.do?currentPage=" + i + "'\">" + i + "</li>");
 			} else {
-				result.append("<li onclick=\"location.href='/notice/notice.do?currentPage=" + i + "'\">" + i + "</li>&nbsp;&nbsp;"); // \" : "를 문자열로 인식하기 위한 escape가 포함 (그냥 '로 써도 된다)
+				result.append("<li onclick=\"location.href='/notice/notice.do?currentPage=" + i + "'\">" + i + "</li>"); // \" : "를 문자열로 인식하기 위한 escape가 포함 (그냥 '로 써도 된다)
 			}
 		}
 
@@ -96,7 +96,7 @@ public class NoticeDAO {
 	}
 	
 	public String generateSearchPageNavi(SqlSession session, int currentPage, String noticeSubject) {		
-		int totalCount = getSearchTotalCount(session); // 전체 게시물의 수
+		int totalCount = getSearchTotalCount(session, noticeSubject); // 전체 게시물의 수
 		int recordCountPerPage = 10; // 한 페이지당 수
 		int naviTotalCount = 0; // 네비게이터의 수
 		
@@ -115,21 +115,21 @@ public class NoticeDAO {
 
 		StringBuilder result = new StringBuilder();
 		if(startNavi != 1) {
-			result.append("<li style='cursor: pointer;' onclick=\"location.href='/notice/search.do?currentPage=" + (startNavi - 1) + "'\"><</li> ");
+			result.append("<li style='cursor: pointer;' onclick=\"location.href='/notice/search.do?notice-search=" + noticeSubject + "&currentPage=" + (startNavi - 1) + "'\"><</li> ");
 		}else {
 			result.append("<li><</li>");
 		}
 
 		for(int i = startNavi; i <= endNavi; i++) {
 			if(currentPage == i) {
-				result.append("<li style='color: #EA5455; font-weight: bold;' onclick=\"location.href='/notice/search.do?currentPage=" + i + "'\">" + i + "</li>&nbsp;&nbsp;");
+				result.append("<li style='color: #EA5455; font-weight: bold;' onclick=\"location.href='/notice/search.do?notice-search=" + noticeSubject + "&currentPage=" + i + "'\">" + i + "</li>");
 			} else {
-				result.append("<li onclick=\"location.href='/notice/search.do?currentPage=" + i + "'\">" + i + "</li>&nbsp;&nbsp;"); // \" : "를 문자열로 인식하기 위한 escape가 포함 (그냥 '로 써도 된다)
+				result.append("<li onclick=\"location.href='/notice/search.do?notice-search=" + noticeSubject + "&currentPage=" + i + "'\">" + i + "</li>"); // \" : "를 문자열로 인식하기 위한 escape가 포함 (그냥 '로 써도 된다)
 			}
 		}
 
 		if(endNavi != naviTotalCount) {
-			result.append("<li style='cursor: pointer;' onclick=\"location.href='/notice/search.do?currentPage=" + (endNavi + 1) + "'\">></li>");
+			result.append("<li style='cursor: pointer;' onclick=\"location.href='/notice/search.do?notice-search=" + noticeSubject + "&currentPage=" + (endNavi + 1) + "'\">></li>");
 		} else {
 			result.append("<li>></li>");
 		}
@@ -137,8 +137,8 @@ public class NoticeDAO {
 		return result.toString();
 	}
 	
-	private int getSearchTotalCount(SqlSession session) {
-		int totalCount = session.selectOne("NoticeMapper.getSearchTotalCount");
+	private int getSearchTotalCount(SqlSession session, String noticeSubject) {
+		int totalCount = session.selectOne("NoticeMapper.getSearchTotalCount", noticeSubject);
 		return totalCount;
 	}
 

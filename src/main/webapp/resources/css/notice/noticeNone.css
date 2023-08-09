@@ -1,0 +1,143 @@
+th {
+    border: 2px solid #bbb;
+    font-family: 'Chosunilbo_myungjo', sans-serif, serif;
+    font-size: 1.2em;
+    height: 50px;
+    background-color: #002B5B;
+    color: #B5B5B5;
+}
+
+th:first-child {
+    width: 140px;
+}
+
+th:nth-child(2){
+    width: 800px;
+}
+
+th:last-child {
+    width: 210px;
+}
+
+td {
+    border-bottom: 2px solid #bbb;
+    height: 40px;
+}
+
+th:first-child {
+	border-left: 0;
+}
+
+th:last-child {
+	border-right: 0;
+}
+
+main {
+    background-color: #F3F3F3;
+    width: 100%;
+    height: 890px;
+}
+
+    #notice-title {
+        width: 1000px;
+        margin: 0 auto; 
+        text-align: center;
+        padding-top: 100px;
+    }
+
+        #notice-title > h1 {
+            display: inline-block;
+            font-family: 'Chosunilbo_myungjo', sans-serif, serif;
+            font-size: 2.5em;
+            padding-bottom: 25px;
+        }
+
+        #colorBox {
+            height: 8px;
+            width: inherit;
+            margin: 10px auto;
+            background: linear-gradient(90deg, #002B5B, #002B5B 8%, #EA5455 8%, #EA5455 18%, #e4dccf 18%, #e4dccf 32%, #F9F5EB 32%, #F9F5EB 68%, #e4dccf 68%, #e4dccf 82%, #EA5455 82%, #EA5455 92%, #002B5B 92%, #002B5B 100%);
+        }
+        
+    /* 작성하기, 검색창  */
+	#notice-menu {
+        	display: flex;
+        	justify-content: space-between;
+        	align-items: flex-end;
+    }
+    
+        /* 작성하기 버튼 */
+	    #write-notice {
+	    	width: inherit;
+	    	display: flex;
+	    	justify-content: right;    	
+	        text-align: center;
+	        display: inline-block;
+	    }
+    
+		    #write-notice > button  {
+		    	background-color: #002B5B;
+		        color: #F3F3F3;
+	            width: 142px;
+	            height: 45px;
+		        margin: 0px;
+		        border: 2px solid #002B5B;
+		        border-radius: 8px;
+		        font-size: 0.9em;
+		        cursor:pointer;
+		        text-align: center;
+		    }
+
+	    /* 검색창 */
+	    #search-notice {
+	    	display: flex;
+	    	justify-content: right;
+	    }
+	    
+	    #search-notice-input {
+	    	width: 218px;
+	    	display: flex;
+	    	justify-content: right; 
+	        padding-top: 35px;
+	        border-bottom: solid 2px #002B5B;
+	    }
+	    
+		    #search-notice-input > input  {
+		    	padding: 8px;
+		        border-style : none;
+		        background-color: #F3F3F3;
+		    }
+		    
+		    #search-notice-icon {
+		    	display: flex;
+		    	align-items: center;
+		    }
+		    
+		    #search-notice-icon img {
+		    	width: 25px;
+		    	height: 25px;
+		    }
+		
+		        
+    /* 공지사항 */
+    #notice {
+        width: 950px;
+        margin: 0 auto;
+    }
+
+        #notice > table {
+            display: flex;
+            justify-content: center;
+            padding-top: 15px;
+            padding-bottom: 50px;
+        }
+        
+	/* 비어있는 공지 */
+	td {
+		height: 470px;
+		font-family: 'Chosunilbo_myungjo', sans-serif, serif;
+    	font-size: 1.2em;
+	    color: #B5B5B5;
+	    font-weight: bold;
+	}
+        

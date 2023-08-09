@@ -53,7 +53,7 @@
                         <c:forEach var="notice" items="${ nList }">
 	                        <tr>
 	                        	<td>${ notice.noticeNo }</td>
-	                        	<td><a href="/notice/detail.do?noticeNo=${ notice.noticeNo }" id="noticeSubject">${ notice.noticeSubject }</a></td>
+	                        	<td onclick="location.href='/notice/detail.do?noticeNo=${ notice.noticeNo }'">${ notice.noticeSubject }</td>
 	                        	<td>${ notice.noticeDate }</td>
 	                        </tr>
                         </c:forEach>

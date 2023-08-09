@@ -59,7 +59,7 @@ td:last-child, th:last-child {
 main {
     background-color: #F3F3F3;
     width: 100%;
-    height: auto;
+    height: 890px;
 }
 
     #notice-title {
@@ -173,4 +173,15 @@ main {
         #page li:not(li:first-child, li:last-child):hover {
             color: #EA5455;
         }
+        
+	/* 비어있는 공지 */
+	#notice-none {
+		height: 470px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: 'Chosunilbo_myungjo', sans-serif, serif;
+    	font-size: 1.2em;
+	    color: #B5B5B5;
+	}
         

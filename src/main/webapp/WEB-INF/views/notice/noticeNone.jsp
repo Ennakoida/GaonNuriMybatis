@@ -6,7 +6,7 @@
 <html lang="ko">
     <head>
 		<jsp:include page="/WEB-INF/views/include/head.jsp"></jsp:include>
-        <link rel="stylesheet" href="/resources/css/notice/notice.css">
+        <link rel="stylesheet" href="/resources/css/notice/noticeNone.css">
         <title>공지사항</title>
     </head>
     <body>
@@ -36,7 +36,7 @@
 						<!--  검색창 -->
 						<div id="search-notice">
 		                    <form name="searchForm" action="/notice/search.do" method="get" id="search-notice-input">
-		                    	<input type="search" name="notice-search" placeholder="검색어 입력" value=${ noticeSearch }>
+		                    	<input type="search" name="notice-search" placeholder="검색어 입력"  value=${ noticeSearch }>
 		                    	<div id="search-notice-icon">
 			                    	<a href="javascript:void(0)" onclick="getSearchNotice();"><img alt="검색" src="/resources/img/search-icon.png"></a>
 		                    	</div>
@@ -50,19 +50,10 @@
                             <th>공지사항</th>
                             <th>작성일</th>
                         </tr>
-                        <c:forEach var="search" items="${ sList }">
-	                        <tr>
-	                        	<td>${ search.noticeNo }</td>
-	                        	<td onclick="location.href='/notice/detail.do?noticeNo=${ search.noticeNo }'">${ search.noticeSubject }</td>
-	                        	<td>${ search.noticeDate }</td>
-	                        </tr>
-                        </c:forEach>
+                        <tr>
+                        	<td colspan="3">목록이 존재하지 않습니다.</td>
+                        </tr>
                     </table>
-                    
-                    <!-- 페이지 전환 버튼  -->
-                    <ul id="page">
-						${ sPageNavi }
-                    </ul>
                 </section>
             </main>
             <jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>

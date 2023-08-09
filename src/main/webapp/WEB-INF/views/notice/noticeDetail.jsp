@@ -35,13 +35,13 @@
                     </c:if>
 					<table>
 						<tr>
-							<td class="detail-top">${ requestScope.notice.noticeNo }</td>
+							<td class="detail-top">${ notice.noticeNo }</td>
 							<td class="detail-top">${ notice.noticeSubject }</td>
 							<td class="detail-top">${ notice.noticeDate }</td>
 							<td class="detail-top">${ notice.viewCount }</td>
 						</tr>
 						<tr>
-							<td colspan="4" id="detail-content">${ notice.noticeContent }</td>
+							<td colspan="4" id="detail-content" style="white-space:pre;">${ notice.noticeContent }</td>
 						</tr>
 					</table>
 					<div>
