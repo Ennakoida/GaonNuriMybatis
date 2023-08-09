@@ -28,115 +28,117 @@
                 </section>
                 <!-- 한복 대여 목록 -->
                 <section id="shopping">
-                    <div id="select-input">
-                        <form action="/hanbok/rental.do" method="get">
+                    <form action="/hanbok/detail.do" method="get">
+                    	<div id="select-input">
                             <div>
                                 <label for="select-place">○○○ 지점 선택</label><br>
                                 <select name="select-place" id="select-place" required>
                                     <option value="" disabled selected hidden>이용할 지점을 선택해주세요.</option>
-                                        <option value="">경복궁</option>
-                                        <option value="">덕수궁</option>
-                                        <option value="">창경궁</option>
-                                        <option value="">창덕궁</option>
-                                        <option value="">종묘</option>
+                                        <option value="경복궁">경복궁</option>
+                                        <option value="덕수궁">덕수궁</option>
+                                        <option value="창경궁">창경궁</option>
+                                        <option value="창덕궁">창덕궁</option>
+                                        <option value="종묘">종묘</option>
                                 </select>
                             </div>
                             <div>
                                 <label for="select-date">대여 일자</label><br>
-                                <input type="datetime-local" name="select-date" id="select-date">
+                                <input type="date" name="select-date" id="select-date" required>
                             </div>
-                        </form>
-                    </div>
-                    <div class="rental-list">
-                        <div class="hanbok">
-                            <!-- 대표 이미지 -->
-                            <img src="/resources/img/hanbok/rentals/hanbok1.jpg" alt="여성용 여름 한복 세트" class="hanbok-img">
-                            <!-- 이름 -->
-                            <h3><span>[ 여성용 ]</span> 여름 한복 세트</h3>
-                            <!-- 간략 소개 -->
-                            <p>얇은 소재로 시원함과<br>유려한 선을 돋보인 한복입니다.</p>
-                            <!-- 가격 -->
-                            <p>89,000원</p>
-                            <div>
-                                <!-- 찜하기 버튼 -->
-                                <img src="/resources/img/hanbok/heart.png" alt="찜하기(안됨)">
-                                <!-- 대여하기 버튼 -->
-                                <button onclick="location.href='/hanbok/detail.do'">대여하기 ></button>
-                            </div>
-                        </div>
-                        <div class="hanbok">
-                            <img src="/resources/img/hanbok/rentals/hanbok2.jpg" alt="남성용 여름 한복 세트" class="hanbok-img">
-                            <h3><span>[ 남성용 ]</span> 여름 한복 세트</h3>
-                            <p>얇은 소재로 시원함과<br>유려한 선을 돋보인 한복입니다.</p>
-                            <p>89,000원</p>
-                            <div>
-                                <img src="/resources/img/hanbok/colored-heart.png" alt="찜하기(됨)">
-                                <button onclick="location.href='#'">대여하기 ></button>
-                            </div>
-                        </div>
-                        <div class="hanbok">
-                            <img src="/resources/img/hanbok/rentals/hanbok3.jpg" alt="여성용 겨울 한복 세트" class="hanbok-img">
-                            <h3><span>[ 여성용 ]</span> 겨울 한복 세트</h3>
-                            <p>도톰한 소재로 따뜻함과<br>고급스러움을 강조한 한복입니다.</p>
-                            <p>105,000원</p>
-                            <div>
-                                <img src="/resources/img/hanbok/heart.png" alt="찜하기(안됨)">
-                                <button onclick="location.href='#'">대여하기 ></button>
-                            </div>
-                        </div>
-                        <div class="hanbok">
-                            <img src="/resources/img/hanbok/rentals/hanbok4.jpg" alt="아동용 한복 세트" class="hanbok-img">
-                            <h3><span>[ 아동용 ]</span> 한복 세트</h3>
-                            <p>아이들도 편하게 착용할 수 있는<br>부드러운 소재로 제작된 한복입니다.</p>
-                            <p>54,000원</p>
-                            <div>
-                                <img src="/resources/img/hanbok/heart.png" alt="찜하기(안됨)">
-                                <button onclick="location.href='#'">대여하기 ></button>
-                            </div>
-                        </div>                        
-                    </div>
-                    <div class="rental-list">
-                        <div class="hanbok">
-                            <img src="/resources/img/hanbok/rentals/hanbok5.jpg" alt="여성용 표준 한복 세트" class="hanbok-img">
-                            <h3><span>[ 여성용 ]</span> 표준 한복 세트</h3>
-                            <p>언제나 착용할 수 있는<br>가장 일반적인 한복입니다.</p>
-                            <p>97,000원</p>
-                            <div>
-                                <img src="/resources/img/hanbok/heart.png" alt="찜하기(안됨)">
-                                <button onclick="location.href='#'">대여하기 ></button>
-                            </div>
-                        </div>
-                        <div class="hanbok">
-                            <img src="/resources/img/hanbok/rentals/hanbok6.jpg" alt="여성용 특별 한복 세트" class="hanbok-img">
-                            <h3><span>[ 여성용 ]</span> 특별 한복 세트</h3>
-                            <p>누구보다 돋보이고 싶은 날에 좋은<br>화려하게 흩날리는 한복입니다.</p>
-                            <p>162,000원</p>
-                            <div>
-                                <img src="/resources/img/hanbok/heart.png" alt="찜하기(안됨)">
-                                <button onclick="location.href='#'">대여하기 ></button>
-                            </div>
-                        </div>
-                        <div class="hanbok">
-                            <img src="/resources/img/hanbok/rentals/hanbok7.jpg" alt="여성용 단아한 한복 세트" class="hanbok-img">
-                            <h3><span>[ 여성용 ]</span> 단아한 한복 세트</h3>
-                            <p>차분하고 깔끔한 디자인의<br>단아한 멋을 강조한 한복입니다.</p>
-                            <p>89,000원</p>
-                            <div>
-                                <img src="/resources/img/hanbok/colored-heart.png" alt="찜하기(됨)">
-                                <button onclick="location.href='#'">대여하기 ></button>
-                            </div>
-                        </div>
-                        <div class="hanbok">
-                            <img src="/resources/img/hanbok/rentals/hanbok8.jpg" alt="남성용 표준 한복 세트" class="hanbok-img">
-                            <h3><span>[ 남성용 ]</span> 표준 한복 세트</h3>
-                            <p>언제나 착용할 수 있는<br>가장 일반적인 한복입니다.</p>
-                            <p>97,000원</p>
-                            <div>
-                                <img src="/resources/img/hanbok/heart.png" alt="찜하기(안됨)">
-                                <button onclick="location.href='#'">대여하기 ></button>
-                            </div>
-                        </div>                        
-                    </div>
+<!--                         </form> -->
+                  		</div>
+	                    <div class="rental-list">
+	                        <div class="hanbok">
+	                            <!-- 대표 이미지 -->
+	                            <img src="/resources/img/hanbok/rentals/hanbok1.jpg" alt="여성용 여름 한복 세트" class="hanbok-img">
+	                            <!-- 이름 -->
+	                            <h3><span>[ 여성용 ]</span> 여름 한복 세트</h3>
+	                            <!-- 간략 소개 -->
+	                            <p>얇은 소재로 시원함과<br>유려한 선을 돋보인 한복입니다.</p>
+	                            <!-- 가격 -->
+	                            <p>89,000원</p>
+	                            <div>
+	                                <!-- 찜하기 버튼 -->
+	                                <img src="/resources/img/hanbok/heart.png" alt="찜하기(안됨)">
+	                                <!-- 대여하기 버튼 -->
+	                                <input type="submit" value="대여하기 >">
+<!-- 	                                <button onclick="location.href='/hanbok/detail.do'">대여하기 ></button> -->
+	                            </div>
+	                        </div>
+	                        <div class="hanbok">
+	                            <img src="/resources/img/hanbok/rentals/hanbok2.jpg" alt="남성용 여름 한복 세트" class="hanbok-img">
+	                            <h3><span>[ 남성용 ]</span> 여름 한복 세트</h3>
+	                            <p>얇은 소재로 시원함과<br>유려한 선을 돋보인 한복입니다.</p>
+	                            <p>89,000원</p>
+	                            <div>
+	                                <img src="/resources/img/hanbok/colored-heart.png" alt="찜하기(됨)">
+	                                <input type="submit" value="대여하기 >">
+	                            </div>
+	                        </div>
+	                        <div class="hanbok">
+	                            <img src="/resources/img/hanbok/rentals/hanbok3.jpg" alt="여성용 겨울 한복 세트" class="hanbok-img">
+	                            <h3><span>[ 여성용 ]</span> 겨울 한복 세트</h3>
+	                            <p>도톰한 소재로 따뜻함과<br>고급스러움을 강조한 한복입니다.</p>
+	                            <p>105,000원</p>
+	                            <div>
+	                                <img src="/resources/img/hanbok/heart.png" alt="찜하기(안됨)">
+	                                <input type="submit" value="대여하기 >">
+	                            </div>
+	                        </div>
+	                        <div class="hanbok">
+	                            <img src="/resources/img/hanbok/rentals/hanbok4.jpg" alt="아동용 한복 세트" class="hanbok-img">
+	                            <h3><span>[ 아동용 ]</span> 한복 세트</h3>
+	                            <p>아이들도 편하게 착용할 수 있는<br>부드러운 소재로 제작된 한복입니다.</p>
+	                            <p>54,000원</p>
+	                            <div>
+	                                <img src="/resources/img/hanbok/heart.png" alt="찜하기(안됨)">
+	                                <input type="submit" value="대여하기 >">
+	                            </div>
+	                        </div>                        
+	                    </div>
+	                    <div class="rental-list">
+	                        <div class="hanbok">
+	                            <img src="/resources/img/hanbok/rentals/hanbok5.jpg" alt="여성용 표준 한복 세트" class="hanbok-img">
+	                            <h3><span>[ 여성용 ]</span> 표준 한복 세트</h3>
+	                            <p>언제나 착용할 수 있는<br>가장 일반적인 한복입니다.</p>
+	                            <p>97,000원</p>
+	                            <div>
+	                                <img src="/resources/img/hanbok/heart.png" alt="찜하기(안됨)">
+	                                <input type="submit" value="대여하기 >">
+	                            </div>
+	                        </div>
+	                        <div class="hanbok">
+	                            <img src="/resources/img/hanbok/rentals/hanbok6.jpg" alt="여성용 특별 한복 세트" class="hanbok-img">
+	                            <h3><span>[ 여성용 ]</span> 특별 한복 세트</h3>
+	                            <p>누구보다 돋보이고 싶은 날에 좋은<br>화려하게 흩날리는 한복입니다.</p>
+	                            <p>162,000원</p>
+	                            <div>
+	                                <img src="/resources/img/hanbok/heart.png" alt="찜하기(안됨)">
+	                                <input type="submit" value="대여하기 >">
+	                            </div>
+	                        </div>
+	                        <div class="hanbok">
+	                            <img src="/resources/img/hanbok/rentals/hanbok7.jpg" alt="여성용 단아한 한복 세트" class="hanbok-img">
+	                            <h3><span>[ 여성용 ]</span> 단아한 한복 세트</h3>
+	                            <p>차분하고 깔끔한 디자인의<br>단아한 멋을 강조한 한복입니다.</p>
+	                            <p>89,000원</p>
+	                            <div>
+	                                <img src="/resources/img/hanbok/colored-heart.png" alt="찜하기(됨)">
+	                                <input type="submit" value="대여하기 >">
+	                            </div>
+	                        </div>
+	                        <div class="hanbok">
+	                            <img src="/resources/img/hanbok/rentals/hanbok8.jpg" alt="남성용 표준 한복 세트" class="hanbok-img">
+	                            <h3><span>[ 남성용 ]</span> 표준 한복 세트</h3>
+	                            <p>언제나 착용할 수 있는<br>가장 일반적인 한복입니다.</p>
+	                            <p>97,000원</p>
+	                            <div>
+	                                <img src="/resources/img/hanbok/heart.png" alt="찜하기(안됨)">
+	                                <input type="submit" value="대여하기 >">
+	                            </div>
+	                        </div>       
+	                    </div>
+                    </form>                 
                 </section>
             </main>
             <jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>

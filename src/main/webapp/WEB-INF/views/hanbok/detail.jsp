@@ -22,70 +22,72 @@
                     <img src="/resources/img/hanbok/rentals/hanbok1.jpg" alt="여름 한복 세트">
                     <!-- 옵션 선택 -->
                     <div id="select-option">
-                        <form action="/hanbok/detail.do" method="get">
+                        <form action="/hanbok/detail.do" method="post">
+                        	<input type="hidden" name="rentalPlace" value="${ hanbok.rentalPlace }">
+                        	<input type="hidden" name="rentalDate" value="${ hanbok.rentalDate }">
                             <label for="top-color">상의 색상</label><br>
                             <select name="top-color" id="top-color" required>
                                 <option value="" disabled selected hidden>옵션 선택</option>
-                                    <option value="">분홍색</option>
-                                    <option value="">빨간색</option>
-                                    <option value="">노란색</option>
-                                    <option value="">옥색</option>
-                                    <option value="">하늘색</option>
-                                    <option value="">남색</option>
-                                    <option value="">보라색</option>
-                                    <option value="">흰색</option>
-                                    <option value="">검은색</option>
+                                    <option value="분홍색">분홍색</option>
+                                    <option value="빨간색">빨간색</option>
+                                    <option value="노란색">노란색</option>
+                                    <option value="옥색">옥색</option>
+                                    <option value="하늘색">하늘색</option>
+                                    <option value="남색">남색</option>
+                                    <option value="보라색">보라색</option>
+                                    <option value="흰색">흰색</option>
+                                    <option value="검은색">검은색</option>
                             </select>
                             <br>
                             <label for="top-size">상의 사이즈</label><br>
                             <select name="top-size" id="top-size" required>
                                 <option value="" disabled selected hidden>옵션 선택</option>
-                                    <option value="">55</option>
-                                    <option value="">66</option>
-                                    <option value="">77</option>
-                                    <option value="">88</option>
-                                    <option value="">99</option>
-                                    <option value="">110</option>
-                                    <option value="">120</option>
+                                    <option value="55">55</option>
+                                    <option value="66">66</option>
+                                    <option value="77">77</option>
+                                    <option value="88">88</option>
+                                    <option value="99">99</option>
+                                    <option value="110">110</option>
+                                    <option value="120">120</option>
                             </select>
                             <br>
                             <label for="pants-color">하의 색상</label><br>
                             <select name="pants-color" id="pants-color" required>
                                 <option value="" disabled selected hidden>옵션 선택</option>
-                                    <option value="">분홍색</option>
-                                    <option value="">빨간색</option>
-                                    <option value="">노란색</option>
-                                    <option value="">옥색</option>
-                                    <option value="">하늘색</option>
-                                    <option value="">남색</option>
-                                    <option value="">보라색</option>
-                                    <option value="">흰색</option>
-                                    <option value="">검은색</option>
+                                    <option value="분홍색">분홍색</option>
+                                    <option value="빨간색">빨간색</option>
+                                    <option value="노란색">노란색</option>
+                                    <option value="옥색">옥색</option>
+                                    <option value="하늘색">하늘색</option>
+                                    <option value="남색">남색</option>
+                                    <option value="보라색">보라색</option>
+                                    <option value="흰색">흰색</option>
+                                    <option value="검은색">검은색</option>
                             </select>
                             <br>
                             <label for="pants-size">하의 사이즈</label><br>
                             <select name="pants-size" id="pants-size" required>
                                 <option value="" disabled selected hidden>옵션 선택</option>
-                                    <option value="">55</option>
-                                    <option value="">66</option>
-                                    <option value="">77</option>
-                                    <option value="">88</option>
-                                    <option value="">99</option>
-                                    <option value="">110</option>
-                                    <option value="">120</option>
+                                    <option value="55">55</option>
+                                    <option value="66">66</option>
+                                    <option value="77">77</option>
+                                    <option value="88">88</option>
+                                    <option value="99">99</option>
+                                    <option value="110">110</option>
+                                    <option value="120">120</option>
                             </select>
                             <br>
                             <label for="accessories">장신구 (선택)</label><br>
                             <select name="accessories" id="accessories">
                                 <option value="" disabled selected hidden>장신구 선택</option>
-                                    <option value="">비녀</option>
-                                    <option value="">뒷꽃이</option>
-                                    <option value="">갓</option>
-                                    <option value="">노리개</option>
-                                    <option value="">버선</option>
-                                    <option value="">꽃신</option>
-                                    <option value="">자수 손가방</option>
-                                    <option value="">부채</option>
+                                    <option value="비녀">비녀</option>
+                                    <option value="뒷꽃이">뒷꽃이</option>
+                                    <option value="갓">갓</option>
+                                    <option value="노리개">노리개</option>
+                                    <option value="버선">버선</option>
+                                    <option value="꽃신">꽃신</option>
+                                    <option value="자수 손가방">자수 손가방</option>
+                                    <option value="부채">부채</option>
                             </select>
                             <br>
                             <div>

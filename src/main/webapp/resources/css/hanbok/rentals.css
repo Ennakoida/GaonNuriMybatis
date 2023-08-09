@@ -85,7 +85,7 @@ main {
             text-align: left;
         }
 
-            form > div {
+            #select-input > div {
                 display: inline-block;
                 text-align: left;
             }
@@ -126,7 +126,7 @@ main {
                         color: #000;
                     }
 
-                input[type=datetime-local] {
+                input[type=date] {
                     width: 180px;
                     height: 45px;
                     margin: 5px;
@@ -189,7 +189,7 @@ main {
                     }
 
                     /* 대여하기 */
-                    .hanbok button {
+                    .hanbok input {
                         width: 160px;
                         height: 35px;
                         border: 2px solid #EA5455;
@@ -198,7 +198,7 @@ main {
                         font-weight: bold;
                     }
 
-                    .hanbok button:hover {
+                    .hanbok input:hover {
                         background-color: #EA5455;
                         color: #F9F5EB;
                         font-weight: normal;
