@@ -1,7 +1,11 @@
 package user.model.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
+import event.reservation.model.vo.Reserve;
+import hanbok.model.vo.Hanbok;
 import user.model.vo.User;
 
 public class UserDAO {
@@ -44,6 +48,16 @@ public class UserDAO {
 	public User selectOneById(SqlSession session, String userId) {
 		User user = session.selectOne("UserMapper.selectOneById", userId);
 		return user;
+	}
+
+	public List<Reserve> selectAllReservesById(SqlSession session, String userId) {
+		List<Reserve> rList = session.selectList("ReserveMapper.selectAllReservesById", userId);
+		return rList;
+	}
+
+	public List<Hanbok> selectAllRentalsById(SqlSession session, String userId) {
+		List<Hanbok> hList = session.selectList("HanbokMapper.selectAllRentalsById", userId);
+		return hList;
 	}
 
 }

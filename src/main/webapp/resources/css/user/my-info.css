@@ -39,11 +39,23 @@ main {
             background: linear-gradient(90deg, #002B5B, #002B5B 8%, #EA5455 8%, #EA5455 18%, #e4dccf 18%, #e4dccf 32%, #F9F5EB 32%, #F9F5EB 68%, #e4dccf 68%, #e4dccf 82%, #EA5455 82%, #EA5455 92%, #002B5B 92%, #002B5B 100%);
         }
 
+	/* 영역 나누기 */
+	#my {
+		width: 52%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	/* 내 정보 */
     #myinfo {
-        width: 100%;
-        text-align: center;
+		border: 2px solid #002B5B;
+		border-radius: 60px;
+		text-align: center;
         margin-top: 55px;
-        padding-bottom: 100px;
+        margin-bottom: 80px;
+		padding: 50px 35px;
+/*         padding-bottom: 100px; */
     }
 
         label:not(label[for=user-event-yn]){
@@ -85,6 +97,7 @@ main {
                 text-align: center;
                 margin: 0 auto;
                 margin-top: 35px;
+                margin-bottom: 20px;
             }
 
                 /* 수정하기 버튼 */
@@ -113,3 +126,83 @@ main {
                     font-size: 0.9em;
                     cursor:pointer;
                 }
+                
+	#my-activity {
+		margin-top: 55px;
+        padding-bottom: 100px;
+	}
+	
+		h4 {
+			width: inherit;
+			text-align: left;
+			font-weight: bold;
+			font-size: 1.0em;
+			margin-top: 15px;
+    		margin-bottom: 8px;	
+    		margin-left: 8px;
+		}
+		
+		#my-reserve, #my-rental, #my-q {
+			overflow-y: scroll;
+			width: 450px;
+			height: 170px;
+			margin: 5px;
+			margin-bottom: 20px;
+			padding: 0;
+		}		
+	
+		table {
+			width: 430px;
+		}
+		
+		th {
+		    border: 2px solid #bbb;
+		    font-family: 'Chosunilbo_myungjo', sans-serif, serif;
+		    font-size: 0.9em;
+		    height: 40px;
+		    background-color: #002B5B;
+		    color: #B5B5B5;
+		}
+
+		td {
+		    border: 2px solid #bbb;
+    		height: 40px;
+            margin-top: 15px;
+            margin-bottom: 3px;
+            font-size: 0.9em;
+		}
+		
+		/* 	행사 예매 내역 */
+		#my-reserve th:first-child {
+			width: 40%;
+		}
+		
+		#my-reserve th:nth-child(2) {
+			width: 35%;
+		}
+		
+		#my-reserve th:last-child {
+			width: 25%;
+		}
+		
+		/* 한복 대여 내역 */
+		#my-rental th:first-child {
+			width: 25%;
+		}
+		
+		#my-rental th:nth-child(2) {
+			width: 25%;
+		}
+		
+		#my-rental th:last-child {
+			width: 50%;
+		}
+		
+		/* 나의 질문 */
+		#my-q th:first-child {
+			width: 70%;
+		}
+		
+		#my-q th:last-child {
+			width: 30%;
+		}

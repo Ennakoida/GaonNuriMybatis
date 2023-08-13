@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import user.model.service.UserService;
 
@@ -34,6 +35,8 @@ public class DeleteController extends HttpServlet {
 		int result = service.deleteUser(userId);
 		
 		if(result > 0) {
+			HttpSession session = request.getSession();
+			session.invalidate();
 			request.setAttribute("msg", "회원 탈퇴");
 			request.setAttribute("url", "/index.jsp");
 			request.getRequestDispatcher("/WEB-INF/views/common/serviceSuccess.jsp").forward(request, response);

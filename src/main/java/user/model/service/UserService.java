@@ -1,8 +1,12 @@
 package user.model.service;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import common.SqlSessionTemplate;
+import event.reservation.model.vo.Reserve;
+import hanbok.model.vo.Hanbok;
 import user.model.dao.UserDAO;
 import user.model.vo.User;
 
@@ -88,6 +92,20 @@ public class UserService {
 		User user = uDao.selectOneById(session, userId);
 		session.close();
 		return user;
+	}
+
+	public List<Reserve> selectAllReservesById(String userId) {
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		List<Reserve> rList = uDao.selectAllReservesById(session, userId);
+		session.close();
+		return rList;
+	}
+
+	public List<Hanbok> selectAllRentalsById(String userId) {
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		List<Hanbok> hList = uDao.selectAllRentalsById(session, userId);
+		session.close();
+		return hList;
 	}
 
 }
