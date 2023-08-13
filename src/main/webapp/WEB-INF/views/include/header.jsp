@@ -20,7 +20,7 @@
                 </ul>
             </li>
             <li class="main-nav"><a href="/event/reservation.do?userId=${ sessionScope.userId }">행사 예매</a></li>
-            <li class="main-nav"><a href="/hanbok/rental.do">한복 대여</a></li>
+            <li class="main-nav"><a href="/hanbok/rental.do?userId=${ sessionScope.userId }">한복 대여</a></li>
             <li class="main-nav"><a href="#">셔틀 버스</a></li>
             <li class="main-nav">열린 마당
                 <ul id="community-menu">

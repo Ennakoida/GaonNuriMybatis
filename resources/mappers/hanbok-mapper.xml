@@ -4,9 +4,24 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="HanbokMapper">
+
+	<resultMap type="hanbok.model.vo.Hanbok" id="hanbokResultMap">
+		<result property="rentalUser"  column="RENTAL_USER"/>
+		<result property="rentalPlace"  column="RENTAL_PLACE"/>
+		<result property="rentalDate"   column="RENTAL_DATE"/>
+		<result property="rentalHanbok"   column="RENTAL_HANBOK"/>
+		<result property="rentalTopColor" column="RENTAL_TOP_COLOR"/>
+		<result property="rentalTopSize"   column="RENTAL_TOP_SIZE"/>
+		<result property="rentalPantsColor"  column="RENTAL_PANTS_COLOR"/>
+		<result property="rentalPantsSize"  column="RENTAL_PANTS_SIZE"/>
+		<result property="rentalAccessories"  column="RENTAL_ACCESSORIES"/>
+	</resultMap>
 	
 	<insert id="insertHanbok">
-		INSERT INTO RENTAL_TBL VALUES(#{ rentalPlace }, #{ rentalDate }, #{ rentalHanbok }, #{ rentalTopColor }, #{ rentalTopSize }, #{ rentalPantsColor }, #{ rentalPantsSize }, #{ rentalAccessories, jdbcType=VARCHAR })
+		INSERT INTO RENTAL_TBL VALUES(#{ rentalUser }, #{ rentalPlace }, #{ rentalDate }, #{ rentalHanbok }, #{ rentalTopColor }, #{ rentalTopSize }, #{ rentalPantsColor }, #{ rentalPantsSize }, #{ rentalAccessories, jdbcType=VARCHAR })
 	</insert>
 	
+	<select id="selectAllRentalsById" resultMap="hanbokResultMap">
+		SELECT * FROM RENTAL_TBL WHERE RENTAL_USER = #{ userId }
+	</select>
 </mapper>

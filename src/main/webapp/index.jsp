@@ -91,7 +91,7 @@
                             <tr>
                                 <td id="rental-service">
                                     <h3>한복 대여 <br> 서비스</h3>
-                                    <button onclick="location.href='/hanbok/rental.do'">대여하기 ></button>
+                                    <button onclick="location.href='/hanbok/rental.do?userId=${ sessionScope.userId }'">대여하기 ></button>
                                 </td>
                                 <td></td>
                             </tr>

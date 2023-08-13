@@ -3,6 +3,7 @@ package hanbok.model.vo;
 import java.sql.Date;
 
 public class Hanbok {
+	private String rentalUser;
 	private String rentalPlace;
 	private Date rentalDate;
 	private String rentalHanbok;
@@ -20,9 +21,10 @@ public class Hanbok {
 		this.rentalDate = rentalDate;
 	}
 	
-	public Hanbok(String rentalPlace, Date rentalDate, String rentalHanbok, String rentalTopColor, String rentalTopSize,
+	public Hanbok(String rentalUser, String rentalPlace, Date rentalDate, String rentalHanbok, String rentalTopColor, String rentalTopSize,
 			String rentalPantsColor, String rentalPantsSize, String rentalAccessories) {
 		super();
+		this.rentalUser = rentalUser;
 		this.rentalPlace = rentalPlace;
 		this.rentalDate = rentalDate;
 		this.rentalHanbok = rentalHanbok;
@@ -31,6 +33,14 @@ public class Hanbok {
 		this.rentalPantsColor = rentalPantsColor;
 		this.rentalPantsSize = rentalPantsSize;
 		this.rentalAccessories = rentalAccessories;
+	}
+
+	public String getRentalUser() {
+		return rentalUser;
+	}
+
+	public void setRentalUser(String rentalUser) {
+		this.rentalUser = rentalUser;
 	}
 
 	public String getRentalPlace() {

@@ -6,7 +6,8 @@
 <mapper namespace="ReserveMapper">
 	
 	<resultMap type="event.reservation.model.vo.Reserve" id="reserveResultMap">
-		<id     property="reservePlace"  column="RESERVE_PLACE"/>
+		<result property="reserveUser"  column="RESERVE_USER"/>
+		<result property="reservePlace"  column="RESERVE_PLACE"/>
 		<result property="reserveDate"   column="RESERVE_DATE"/>
 		<result property="reserveTime"   column="RESERVE_TIME"/>
 		<result property="reservePeople" column="RESERVE_PEOPLE"/>
@@ -16,7 +17,11 @@
 	</resultMap>
 
 	<insert id="insertReserve">
-		INSERT INTO RESERVE_TBL VALUES(#{ reservePlace }, #{ reserveDate }, #{ reserveTime }, #{ reservePeople }, #{ reserveName }, #{ reservePhone }, #{ reserveEmail, jdbcType=VARCHAR })
+		INSERT INTO RESERVE_TBL VALUES(#{ reserveUser }, #{ reservePlace }, #{ reserveDate }, #{ reserveTime }, #{ reservePeople }, #{ reserveName }, #{ reservePhone }, #{ reserveEmail, jdbcType=VARCHAR })
 	</insert>
+	
+	<select id="selectAllReservesById" resultMap="reserveResultMap">
+		SELECT * FROM RESERVE_TBL WHERE RESERVE_USER = #{ userId }
+	</select>
 
 </mapper>

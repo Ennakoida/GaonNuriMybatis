@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!-- 한복 대여 상세 페이지 -->
 <!DOCTYPE html>
 <html lang="ko">
@@ -23,6 +24,9 @@
                     <!-- 옵션 선택 -->
                     <div id="select-option">
                         <form action="/hanbok/detail.do" method="post">
+                        	<c:if test="${ sessionScope.userId ne null }">
+                        		<input type="hidden" name="userId" value="${ sessionScope.userId }">
+                        	</c:if>
                         	<input type="hidden" name="rentalPlace" value="${ hanbok.rentalPlace }">
                         	<input type="hidden" name="rentalDate" value="${ hanbok.rentalDate }">
                             <label for="top-color">상의 색상</label><br>

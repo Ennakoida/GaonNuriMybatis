@@ -51,6 +51,7 @@
                                 <div>
                                     <h3>예매자 정보</h3>
                                     <c:if test="${ sessionScope.userId ne null }">
+			                        	<input type="hidden" name="userId" value="${ sessionScope.userId }">
                                     	<label for="login-user"><input type="checkbox" name="login-user" id="login-user" value="Y"> 가입 정보와 동일</label>
                                     </c:if>
                                 </div>
@@ -181,7 +182,9 @@
                     document.getElementById("user-email").value = "";
                 }
             });
+            </script>
 
+			<script>
             // input 박스 내부 글씨 색 변경 용
             document.getElementById("select-place").addEventListener("change", function(){
                 document.getElementById("select-place").style.color = "black";

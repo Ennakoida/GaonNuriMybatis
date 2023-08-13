@@ -3,6 +3,7 @@ package event.reservation.model.vo;
 import java.sql.Date;
 
 public class Reserve {
+	private String reserveUser;
 	private String reservePlace;
 	private Date reserveDate;
 	private String reserveTime;
@@ -13,9 +14,10 @@ public class Reserve {
 	
 	public Reserve() {	}
 	
-	public Reserve(String reservePlace, Date reserveDate, String reserveTime, int reservePeople, 
+	public Reserve(String reserveUser, String reservePlace, Date reserveDate, String reserveTime, int reservePeople, 
 			String reserveName, String reservePhone, String reserveEmail) {
 		super();
+		this.reserveUser = reserveUser;
 		this.reservePlace = reservePlace;
 		this.reserveDate = reserveDate;
 		this.reserveTime = reserveTime;
@@ -23,6 +25,14 @@ public class Reserve {
 		this.reserveName = reserveName;
 		this.reservePhone = reservePhone;
 		this.reserveEmail = reserveEmail;
+	}
+
+	public String getReserveUser() {
+		return reserveUser;
+	}
+
+	public void setReserveUser(String reserveUser) {
+		this.reserveUser = reserveUser;
 	}
 
 	public String getReservePlace() {

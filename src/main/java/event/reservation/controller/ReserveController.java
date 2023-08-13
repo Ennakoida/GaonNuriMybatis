@@ -57,34 +57,44 @@ public class ReserveController extends HttpServlet {
 		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		
 		request.setCharacterEncoding("UTF-8");
-		String reservePlace = request.getParameter("select-place");
-		// String을 java.util.Date로 바꾼다.
-		// util.Date > sql.Date
-		// https://dnjsrud.tistory.com/215
-		LocalDate date = LocalDate.parse(request.getParameter("select-date"), dateTimeFormatter);
-		Date reserveDate = Date.valueOf(date);
-		String reserveTime = request.getParameter("select-time");
-		int reservePeople = Integer.parseInt(request.getParameter("select-people"));
+		String reserveUser = request.getParameter("userId"); // 로그인한 사용자 아이디
+
+		if(reserveUser == null) {
+			// 로그인 X -> 예매 불가
+			request.setAttribute("msg", "행사 예매");
+			request.setAttribute("url", "/user/login.do");
+			request.getRequestDispatcher("/WEB-INF/views/common/needLogin.jsp").forward(request, response);
+		} else {
+			// 로그인 O -> 예매 가능
+			String reservePlace = request.getParameter("select-place");
+			// String을 java.util.Date로 바꾼다.
+			// util.Date > sql.Date
+			// https://dnjsrud.tistory.com/215
+			LocalDate date = LocalDate.parse(request.getParameter("select-date"), dateTimeFormatter);
+			Date reserveDate = Date.valueOf(date);
+			String reserveTime = request.getParameter("select-time");
+			int reservePeople = Integer.parseInt(request.getParameter("select-people"));
 //		String loginUserCheck = request.getParameter("login-user");
 //		loginUserCheck = loginUserCheck != null ? "Y" : "N";
-		String reserveName = request.getParameter("user-name");
-		String reservePhone = request.getParameter("user-phone");
-		String reserveEmail = request.getParameter("user-email");
-		Reserve reserve = new Reserve(reservePlace, reserveDate, reserveTime, reservePeople, reserveName, reservePhone, reserveEmail);
-		
-		// insert
-		int result = service.insertReserve(reserve);
-		
-		if(result > 0) {
-			// 성공
-			request.setAttribute("msg", "행사 예매");
-			request.setAttribute("url", "/index.jsp");
-			request.getRequestDispatcher("/WEB-INF/views/common/serviceSuccess.jsp").forward(request, response);
-		} else {
-			// 실패
-			request.setAttribute("msg", "행사 예매");
-			request.setAttribute("url", "/event/reservation.do");
-			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp").forward(request, response);
+			String reserveName = request.getParameter("user-name");
+			String reservePhone = request.getParameter("user-phone");
+			String reserveEmail = request.getParameter("user-email");
+			Reserve reserve = new Reserve(reserveUser, reservePlace, reserveDate, reserveTime, reservePeople, reserveName, reservePhone, reserveEmail);
+			
+			// insert
+			int result = service.insertReserve(reserve);
+			
+			if(result > 0) {
+				// 성공
+				request.setAttribute("msg", "행사 예매");
+				request.setAttribute("url", "/index.jsp");
+				request.getRequestDispatcher("/WEB-INF/views/common/serviceSuccess.jsp").forward(request, response);
+			} else {
+				// 실패
+				request.setAttribute("msg", "행사 예매");
+				request.setAttribute("url", "/event/reservation.do");
+				request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp").forward(request, response);
+			}
 		}
 	}
 

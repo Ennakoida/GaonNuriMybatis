@@ -53,24 +53,42 @@ public class RentalDetailController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		String rentalUser = request.getParameter("userId");
 		
-		String rentalPlace = request.getParameter("rentalPlace");
-		Date rentalDate = Date.valueOf(request.getParameter("rentalDate"));
-		String rentalHanbok = "[ 여성용 ] 여름 한복 세트";
-		String rentalTopColor = request.getParameter("top-color");
-		String rentalTopSize = request.getParameter("top-size");
-		String rentalPantsColor = request.getParameter("pants-color");
-		String rentalPantsSize = request.getParameter("pants-size");
-		String rentalAccessories = request.getParameter("accessories");
-		
-		Hanbok hanbok = new Hanbok(rentalPlace, rentalDate, rentalHanbok, rentalTopColor, rentalTopSize, rentalPantsColor, rentalPantsSize, rentalAccessories);
-		HanbokService service = new HanbokService();
-		System.out.println(hanbok.toString());
-		int result = service.insertHanbok(hanbok);
-		
-		if(result > 0) {
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+		if(rentalUser == null) {
+			// 로그인 X -> 대여 불가
+			request.setAttribute("msg", "한복 대여");
+			request.setAttribute("url", "/user/login.do");
+			request.getRequestDispatcher("/WEB-INF/views/common/needLogin.jsp").forward(request, response);
+		} else {
+			// 로그인 O -> 대여 가능
+			String rentalPlace = request.getParameter("rentalPlace");
+			Date rentalDate = Date.valueOf(request.getParameter("rentalDate"));
+			String rentalHanbok = "[ 여성용 ] 여름 한복 세트";
+			String rentalTopColor = request.getParameter("top-color");
+			String rentalTopSize = request.getParameter("top-size");
+			String rentalPantsColor = request.getParameter("pants-color");
+			String rentalPantsSize = request.getParameter("pants-size");
+			String rentalAccessories = request.getParameter("accessories");
+			
+			Hanbok hanbok = new Hanbok(rentalUser, rentalPlace, rentalDate, rentalHanbok, rentalTopColor, rentalTopSize, rentalPantsColor, rentalPantsSize, rentalAccessories);
+			HanbokService service = new HanbokService();
+			System.out.println(hanbok.toString());
+			int result = service.insertHanbok(hanbok);
+			
+			if(result > 0) {
+				// 성공
+				request.setAttribute("msg", "한복 대여");
+				request.setAttribute("url", "/index.jsp");
+				request.getRequestDispatcher("/WEB-INF/views/common/serviceSuccess.jsp").forward(request, response);
+			} else {
+				// 실패
+				request.setAttribute("msg", "한복 대여");
+				request.setAttribute("url", "/event/reservation.do");
+				request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp").forward(request, response);
+			}
 		}
+		
 	}
 
 }
